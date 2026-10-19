@@ -1,21 +1,37 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
 
 export default function AboutPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
   return (
-    <div ref={containerRef} className="relative pt-24 bg-white text-black">
-      {/* 1. Page Header matching About _ Bunya Productions.html Row 0 */}
-      <section className="relative bg-white py-20 md:py-32 text-center border-b border-neutral-200">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light uppercase tracking-[0.15em] text-neutral-900">
-            About
+    <div className="relative bg-white text-black min-h-screen">
+      {/* 1. Page Hero with Full-Size Professional Cinematic Background Picture matching Screenshot 5 */}
+      <section className="relative h-[65vh] sm:h-[75vh] md:h-[82vh] min-h-[480px] w-full flex items-center justify-center text-center overflow-hidden bg-black">
+        {/* Full-bleed background cinematic picture */}
+        <div className="absolute inset-0 z-0 select-none">
+          <Image
+            src="/assets/images/menu_bg_cinematic_landscape.jpg"
+            alt="Poppy Productions About Cinematic"
+            fill
+            priority
+            sizes="100vw"
+            quality={92}
+            className="object-cover object-center"
+          />
+          {/* Subtle Dark Gradient Overlay for contrast and readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/45 to-black/85" />
+        </div>
+
+        {/* Editorial Text Content */}
+        <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 space-y-4 pt-16">
+          <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[130px] font-extralight uppercase tracking-[0.22em] text-white select-none">
+            ABOUT
           </h1>
+          <p className="text-xs sm:text-sm font-light uppercase tracking-[0.35em] text-white/85 max-w-2xl mx-auto">
+            THE CREATIVE COLLECTIVE &amp; STORYTELLERS BEHIND POPPY PRODUCTIONS
+          </p>
         </div>
       </section>
 
@@ -47,10 +63,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. TEAM Section matching Bunya Screenshots 2, 3 & 4 */}
+      {/* 3. TEAM Section matching Bunya Screenshots 2, 3 & 4 (Pakistani Leadership Team) */}
       <TeamSection />
 
-      {/* 4. DIVISIONS matching Bunya (Bunya Productions, Bunya Entertainment, Dark Matter) */}
+      {/* 4. DIVISIONS matching Bunya (Poppy Productions, Poppy Entertainment, Dark Matter) */}
       <section id="divisions" className="relative bg-[#f8f8f8] py-24 md:py-36 text-neutral-900">
         <div className="mx-auto max-w-6xl px-6 md:px-12 space-y-16">
           <div className="text-center sm:text-left border-b border-neutral-300 pb-6">

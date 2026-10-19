@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import gsap from "gsap";
 import { TeamMember } from "@/types";
@@ -14,10 +14,10 @@ export default function TeamMemberModal({
   member,
   onClose,
 }: TeamMemberModalProps) {
-  const modalRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const leftColRef = useRef<HTMLDivElement>(null);
+  const rightColRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [isHoveringModal, setIsHoveringModal] = useState(false);
 
   // Lock body scroll and trigger GSAP entrance animation
   useEffect(() => {
@@ -25,21 +25,27 @@ export default function TeamMemberModal({
 
     document.body.style.overflow = "hidden";
 
-    if (contentRef.current) {
+    if (containerRef.current) {
       gsap.fromTo(
-        contentRef.current,
-        {
-          scale: 0.92,
-          opacity: 0,
-          y: 20,
-        },
-        {
-          scale: 1,
-          opacity: 1,
-          y: 0,
-          duration: 0.45,
-          ease: "power3.out",
-        }
+        containerRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.35, ease: "power2.out" }
+      );
+    }
+
+    if (leftColRef.current) {
+      gsap.fromTo(
+        leftColRef.current,
+        { x: -40, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.5, delay: 0.1, ease: "power3.out" }
+      );
+    }
+
+    if (rightColRef.current) {
+      gsap.fromTo(
+        rightColRef.current,
+        { scale: 1.05, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.6, delay: 0.05, ease: "power2.out" }
       );
     }
 
@@ -56,15 +62,9 @@ export default function TeamMemberModal({
     };
   }, [member, onClose]);
 
-  // Floating cursor following mouse across screen with GSAP quickTo (120fps smooth tracking)
+  // Floating cursor on the right image side (120fps smooth tracking)
   useEffect(() => {
     if (!member || !cursorRef.current) return;
-
-    // Set initial position
-    gsap.set(cursorRef.current, {
-      x: window.innerWidth / 2,
-      y: window.innerHeight / 2,
-    });
 
     const xTo = gsap.quickTo(cursorRef.current, "x", {
       duration: 0.12,
@@ -93,22 +93,25 @@ export default function TeamMemberModal({
       ? member.bioParagraphs
       : [member.bio];
 
-  const handleModalClick = (e: React.MouseEvent) => {
-    // If user is selecting text, do not dismiss
+  const handleLeftClick = (e: React.MouseEvent) => {
+    // If user is actively highlighting or selecting text, do not close
     const selection = window.getSelection();
     if (selection && selection.toString().length > 0) {
       return;
     }
-    onClose();
+    // Clicking on empty areas closes modal
+    const target = e.target as HTMLElement;
+    if (target.tagName.toLowerCase() === "a" || target.tagName.toLowerCase() === "button") {
+      return;
+    }
   };
 
   return (
     <div
-      ref={modalRef}
-      onClick={onClose}
-      className="fixed inset-0 z-[150] flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/75 backdrop-blur-md transition-opacity duration-300 cursor-pointer select-none"
+      ref={containerRef}
+      className="fixed inset-0 z-[150] w-screen h-screen flex flex-col md:flex-row bg-[#0A0A0A] select-none will-change-transform"
     >
-      {/* Dynamic Floating Cross Cursor that follows mouse everywhere matching Screenshot 4 */}
+      {/* Floating magnetic cursor following mouse across screen */}
       <div
         ref={cursorRef}
         className="fixed top-0 left-0 pointer-events-none z-[170] -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center justify-center w-12 h-12 rounded-full border border-neutral-900 bg-white text-black shadow-2xl will-change-transform"
@@ -116,37 +119,48 @@ export default function TeamMemberModal({
         <X className="w-5 h-5 stroke-[2]" />
       </div>
 
-      {/* Main 2-Column Modal Dialog matching Screenshot 4 */}
+      {/* Left Column (50%): Editorial Biography Details */}
       <div
-        ref={contentRef}
-        onClick={handleModalClick}
-        onMouseEnter={() => setIsHoveringModal(true)}
-        onMouseLeave={() => setIsHoveringModal(false)}
-        className="relative w-full max-w-5xl max-h-[90vh] bg-white text-neutral-900 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 cursor-pointer select-text"
+        ref={leftColRef}
+        onClick={handleLeftClick}
+        className="w-full md:w-1/2 h-1/2 md:h-full bg-[#f6f6f6] text-neutral-900 overflow-y-auto px-6 sm:px-12 md:px-16 lg:px-20 py-12 md:py-24 flex flex-col justify-start select-text"
       >
-        {/* Left Column (50%): Bio Details matching Screenshot 4 */}
-        <div className="md:col-span-6 bg-[#f9f9f9] p-8 sm:p-12 md:p-14 overflow-y-auto max-h-[50vh] md:max-h-[85vh] flex flex-col justify-center space-y-6">
-          <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wider text-neutral-900">
-              {member.name}
-            </h2>
-            <p className="text-sm sm:text-base font-normal text-neutral-600 mt-1">
-              {member.role}
-            </p>
+        <div className="max-w-xl my-auto space-y-6">
+          {/* Division / Subtitle Tag */}
+          <div className="flex items-center space-x-3">
+            <span className="w-8 h-[2px] bg-[#F2613F]" />
+            <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#F2613F]">
+              {member.division || "POPPY PRODUCTIONS"}
+            </span>
           </div>
 
-          <div className="space-y-4 text-sm sm:text-base font-light text-neutral-700 leading-relaxed border-t border-neutral-200 pt-6">
+          {/* Member Name */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.15em] text-neutral-900 leading-tight">
+            {member.name}
+          </h2>
+
+          {/* Role */}
+          <p className="text-xs sm:text-sm font-medium uppercase tracking-[0.22em] text-neutral-600">
+            {member.role}
+          </p>
+
+          {/* Divider */}
+          <div className="w-16 h-[1.5px] bg-neutral-900/20" />
+
+          {/* Bio Paragraphs - Perfectly Aligned and Spaced */}
+          <div className="space-y-4 text-sm sm:text-base font-light text-neutral-700 leading-relaxed">
             {paragraphs.map((p, idx) => (
               <p key={idx}>{p}</p>
             ))}
           </div>
 
+          {/* Key Highlights */}
           {member.highlights && member.highlights.length > 0 && (
-            <div className="pt-4 border-t border-neutral-200">
-              <span className="text-[11px] font-semibold uppercase tracking-widest text-[#cc0000] block mb-2">
+            <div className="pt-6 border-t border-neutral-300 space-y-3">
+              <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#F2613F] block">
                 Key Highlights
               </span>
-              <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm text-neutral-600">
+              <ul className="list-disc list-inside space-y-1.5 text-xs sm:text-sm text-neutral-600 font-light">
                 {member.highlights.map((h, i) => (
                   <li key={i}>{h}</li>
                 ))}
@@ -154,25 +168,31 @@ export default function TeamMemberModal({
             </div>
           )}
         </div>
-
-        {/* Right Column (50%): Full-Bleed B&W Portrait matching Screenshot 4 */}
-        <div className="md:col-span-6 relative w-full h-[320px] md:h-full min-h-[380px] bg-black overflow-hidden">
-          <img
-            src={member.imageSrc}
-            alt={member.name}
-            className="w-full h-full object-cover object-top filter grayscale contrast-110"
-          />
-        </div>
-
-        {/* Boundary Circular Close Button matching Screenshot 4 */}
-        <button
-          onClick={onClose}
-          aria-label="Close Team Member Modal"
-          className="absolute top-4 right-4 md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 z-30 flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-neutral-900 bg-white text-black shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-[#cc0000] hover:text-white hover:border-[#cc0000] focus:outline-none cursor-pointer"
-        >
-          <X className="w-5 h-5 stroke-[2]" />
-        </button>
       </div>
+
+      {/* Right Column (50%): Full-Bleed B&W Portrait Photograph */}
+      <div
+        ref={rightColRef}
+        onClick={onClose}
+        className="w-full md:w-1/2 h-1/2 md:h-full relative bg-neutral-950 overflow-hidden cursor-pointer"
+      >
+        <img
+          src={member.imageSrc}
+          alt={member.name}
+          className="w-full h-full object-cover object-top filter grayscale contrast-110"
+        />
+        {/* Subtle dark vignette on edges */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
+      </div>
+
+      {/* Center Seam Circular Close Button matching Screenshot 4 */}
+      <button
+        onClick={onClose}
+        aria-label="Close Team Member Modal"
+        className="absolute top-6 right-6 md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 z-[160] flex items-center justify-center w-12 h-12 rounded-full border border-neutral-900 bg-white text-black shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-[#F2613F] hover:text-white hover:border-[#F2613F] focus:outline-none cursor-pointer"
+      >
+        <X className="w-5 h-5 stroke-[2]" />
+      </button>
     </div>
   );
 }
