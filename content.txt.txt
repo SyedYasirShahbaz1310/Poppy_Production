@@ -1,0 +1,87 @@
+# POPPY PRODUCTIONS - COMPLETE WEBSITE CONTENT & THEME SPECS
+
+## 1. BRAND & COLOR THEME (MATCH LOGO EXACTLY)
+- Brand Name: Poppy Productions
+- Logo File: `./logo.png` (Also render text logo fallback: "Poppy" in #FFFFFF and "Productions" in #F2613F)
+- Primary Background: `#0A0A0A` (Deep Cinematic Black)
+- Secondary Background / Cards: `#121212`
+- Primary Text: `#FFFFFF` (Pure White)
+- Brand Accent Color (From "Productions" in Logo): `#F2613F` (Poppy Red-Orange / Coral)
+- Hover / Glow Accent: `#FF704D`
+- Use `#F2613F` for:
+  * "WATCH SHOWREEL" play button border/fill & hover glow
+  * Category badges on project cards
+  * Active filter pills in News section
+  * Interactive link underlines, arrows, and hover states
+  * Highlighted words in the kinetic marquee ("Award-winning" / "Poppy Productions")
+  * Team member role titles on About page
+
+## 2. PAGES TO BUILD (MULTI-PAGE ARCHITECTURE)
+1. **Home Page (`/`)**: Cloned from `reference.html` + `reference_files`
+2. **About Page (`/about`)**: Cloned from `About _ Bunya Productions.html` + `About _ Bunya Productions_files`
+
+## 3. LOCAL MEDIA FOLDERS TO SCAN & WIRE AUTOMATICALLY
+- `./my_videos_data` -> Use for Hero Background Loop Video and Full Showreel Modal Video
+- `./Project_videos` -> Use for all Project / Production Cards in the Productions Grid
+- `./Team_images` -> Use for the Team Members Grid on the `/about` page (and Home preview)
+- `./logo.png` -> Brand logo in Header and Footer
+
+## 4. HOME PAGE CONTENT (`/`)
+- Hero Headline: "WE CREATE AWARD-WINNING FILM, VIDEO AND DIGITAL PRODUCTIONS"
+- Hero Subtext: "Poppy Productions is a premier creative production house working with visionary talent to bring unforgettable visual stories to life."
+- CTA Button: "Find out more" (Links to `/about`)
+- Productions Section: Automatically load all videos from `./Project_videos` folder.
+- Marquee Line 1: "Award-winning • Award-winning • Award-winning • Award-winning •"
+- Marquee Line 2: "Poppy Productions • Poppy Productions • Poppy Productions •"
+
+## 5. ABOUT PAGE CONTENT (`/about`)
+- Follow the exact layout, typography, story blocks, and animations of `About _ Bunya Productions.html`.
+- Replace Bunya Productions text with Poppy Productions story, mission, and creative vision.
+- Populate the Team / Leadership section on the About page using all photos inside `./Team_images`.
+
+
+# POPY PRODUCTION WEBSITE CONTENT & MEDIA MAPPING
+
+1. BRAND INFO:
+- Company Name: Popy Production (ya Poppy Studio)
+- Theme: Exact dark cinematic theme like https://bunyaproductions.com.au/
+
+2. MEDIA FOLDERS (IMPORTANT - Scan these folders automatically):
+- Main Hero & Showreel Videos are inside: `./my_videos_data`
+- Project Showcase Videos are inside: `./Project_videos`
+- Team Member Photos are inside: `./Team_images`
+
+3. HERO SECTION:
+- Background Video: Use the main video from `./my_videos_data`
+- Button Text: "WATCH SHOWREEL" (Opens modal with full video from `./my_videos_data`)
+- Main Heading: "WE CREATE AWARD-WINNING VISUAL STORIES & PRODUCTIONS" (Ya apni headline likhein)
+- Sub-text: "[Yahan Popy Production ki 2 lines ki description likhein]"
+- Button: "Find out more"
+
+4. PRODUCTIONS / PROJECTS SECTION:
+- Section Heading: "PRODUCTIONS"
+- Instructions: Automatically pick all videos from `./Project_videos` folder.
+- Project 1 Title: "[Project 1 Ka Naam]" | Category: "[e.g., COMMERCIAL / FILM]"
+- Project 2 Title: "[Project 2 Ka Naam]" | Category: "[e.g., MUSIC VIDEO]"
+- Project 3 Title: "[Project 3 Ka Naam]" | Category: "[e.g., DOCUMENTARY]"
+- Project 4 Title: "[Project 4 Ka Naam]" | Category: "[e.g., BRAND CAMPAIGN]"
+*(Note: Agar aapke Project_videos folder mein jitni bhi videos hain, unke naam yahan likh dein)*
+
+5. OUR TEAM SECTION (Same Bunya Card Style):
+- Section Heading: "OUR TEAM"
+- Instructions: Automatically pick all images from `./Team_images` folder.
+- Team Member 1: "[Naam]" - "[Role, e.g., Creative Director]"
+- Team Member 2: "[Naam]" - "[Role, e.g., Lead Editor]"
+- Team Member 3: "[Naam]" - "[Role, e.g., Cinematographer]"
+
+6. INFINITE SCROLLING MARQUEE TEXT (Bottom Banner):
+- Line 1: "Award-winning • Award-winning • Award-winning • Award-winning •"
+- Line 2: "Popy Production • Film and Video • Popy Production • Film and Video •"
+
+7. FOOTER:
+- Copyright: "© 2026 Popy Production. All rights reserved."
+- Social Links: Instagram, YouTube, Facebook, LinkedIn
+
+
+instagram link : https://www.instagram.com/poppyproductions22/?hl=en
+facebook link : https://web.facebook.com/profile.php?id=61588100360036

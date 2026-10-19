@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-opensans: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --poppy-accent: #F2613F;
+}
+
+html {
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  color-scheme: dark;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F2613F;
+}
+
+/* Selection */
+::selection {
+  background-color: #F2613F;
+  color: #FFFFFF;
+}
+
+/* Subtle Vignette */
+.bg-radial-vignette {
+  background: radial-gradient(circle at center, transparent 30%, rgba(10, 10, 10, 0.85) 100%);
+}
+
+/* Text stroke for massive marquee */
+.text-stroke-white {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+  color: transparent;
+}
+
+.text-stroke-poppy {
+  -webkit-text-stroke: 1.5px #F2613F;
+  color: transparent;
+}
