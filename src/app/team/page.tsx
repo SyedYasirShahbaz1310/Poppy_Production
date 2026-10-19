@@ -13,7 +13,7 @@ export default function TeamPage() {
       <section className="relative h-[55vh] sm:h-[65vh] min-h-[420px] w-full flex items-center justify-center text-center overflow-hidden bg-black text-white">
         <div className="absolute inset-0 z-0 select-none">
           <Image
-            src="/assets/images/menu_bg_cinematic_aerial.jpg"
+            src="/assets/images/menu_bg_extracted_aerial_2.jpg"
             alt="Poppy Productions Team"
             fill
             priority
@@ -21,7 +21,7 @@ export default function TeamPage() {
             quality={92}
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/35 to-black/75" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 space-y-4 pt-16">

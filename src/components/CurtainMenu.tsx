@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 import { X, Search, Facebook, Youtube, Instagram, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BRAND_CONFIG } from "@/lib/data";
@@ -20,6 +20,9 @@ export default function CurtainMenu({
   onOpenSearch,
   onOpenShowreel,
 }: CurtainMenuProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+
   // Lock body scroll when menu is active
   useEffect(() => {
     if (isOpen) {
@@ -40,6 +43,37 @@ export default function CurtainMenu({
     { label: "Contact", href: "/#contact" },
   ];
 
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    onClose();
+
+    if (href === "/") {
+      if (pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        router.push("/");
+      }
+      return;
+    }
+
+    if (href.startsWith("/#")) {
+      const targetId = href.replace("/#", "");
+      if (pathname === "/") {
+        setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 120);
+      } else {
+        router.push(href);
+      }
+      return;
+    }
+
+    router.push(href);
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -49,32 +83,32 @@ export default function CurtainMenu({
           animate={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[120] flex flex-col justify-between overflow-hidden bg-black text-white"
+          className="fixed inset-0 z-[120] flex flex-col justify-between overflow-hidden bg-[#0A0A0A] text-white"
         >
-          {/* Full-size Professional Cinematic Background Picture */}
+          {/* Full-size Professional Cinematic Background Picture directly extracted from Poppy video footage */}
           <motion.div
             initial={{ scale: 1.08 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="absolute inset-0 z-0 select-none"
+            className="absolute inset-0 z-0 select-none overflow-hidden"
           >
-            <Image
-              src="/assets/images/menu_bg_cinematic_landscape.jpg"
+            <img
+              src="/assets/images/menu_bg_extracted_aerial.jpg"
               alt="Poppy Productions Cinematic Scene"
-              fill
-              priority
-              sizes="100vw"
-              quality={92}
-              className="object-cover object-center"
+              className="w-full h-full object-cover object-center pointer-events-none brightness-90 contrast-105"
             />
-            {/* Dark Gradient Overlay for contrast and readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-black/85" />
+            {/* Elegant cinematic contrast overlay - balanced so the aerial video frame is clearly visible and vibrant while text remains crisp */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/75 pointer-events-none" />
           </motion.div>
 
           {/* Top Header inside Menu */}
           <div className="relative z-10 flex w-full items-center justify-between px-6 sm:px-8 md:px-10 py-3 sm:py-3.5">
             {/* Left: Brand Logo */}
-            <Link href="/" onClick={onClose} className="group flex items-center">
+            <Link
+              href="/"
+              onClick={(e) => handleNavClick(e, "/")}
+              className="group flex items-center"
+            >
               <div className="flex flex-col text-white tracking-[0.25em] select-none">
                 <span className="text-xl sm:text-2xl md:text-[26px] font-bold tracking-[0.28em] leading-none">
                   POPPY
@@ -131,8 +165,8 @@ export default function CurtainMenu({
                 >
                   <Link
                     href={item.href}
-                    onClick={onClose}
-                    className="group inline-block text-4xl sm:text-6xl md:text-7xl font-extralight uppercase tracking-[0.14em] text-white/90 hover:text-white hover:translate-x-3 transition-all duration-300"
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="group inline-block text-4xl sm:text-6xl md:text-7xl font-extralight uppercase tracking-[0.14em] text-white hover:translate-x-3 transition-all duration-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
                   >
                     <span className="transition-colors group-hover:text-[#F2613F]">
                       {item.label}

@@ -12,7 +12,7 @@ export default function AboutPage() {
         {/* Full-bleed background cinematic picture */}
         <div className="absolute inset-0 z-0 select-none">
           <Image
-            src="/assets/images/menu_bg_cinematic_landscape.jpg"
+            src="/assets/images/menu_bg_extracted_aerial.jpg"
             alt="Poppy Productions About Cinematic"
             fill
             priority
@@ -21,7 +21,7 @@ export default function AboutPage() {
             className="object-cover object-center"
           />
           {/* Subtle Dark Gradient Overlay for contrast and readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/45 to-black/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/35 to-black/75" />
         </div>
 
         {/* Editorial Text Content */}
