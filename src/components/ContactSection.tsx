@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles, MapPin, Phone, Mail, Clock, ChevronDown } from "lucide-react";
 import { BRAND_CONFIG } from "@/lib/data";
 
 export default function ContactSection() {
@@ -10,7 +10,7 @@ export default function ContactSection() {
     email: "",
     phone: "",
     projectType: "Commercial / Advertising",
-    budgetRange: "$25,000 - $75,000",
+    budgetRange: "PKR 1,000,000 - 3,000,000",
     message: "",
   });
 
@@ -48,7 +48,7 @@ export default function ContactSection() {
           email: "",
           phone: "",
           projectType: "Commercial / Advertising",
-          budgetRange: "$25,000 - $75,000",
+          budgetRange: "PKR 1,000,000 - 3,000,000",
           message: "",
         });
       } else {
@@ -82,12 +82,12 @@ export default function ContactSection() {
               narratives, our team delivers world-class cinematic excellence.
             </p>
 
-            {/* Lahore Studio Card matching Screenshot 2 */}
+            {/* Lahore Studio Card */}
             <div className="rounded-2xl border border-white/10 bg-[#121212] p-5 sm:p-7 shadow-2xl space-y-4 sm:space-y-5">
               {/* Studio Header: Location Pin & Green Live Dot */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2.5">
-                  <MapPin className="w-5 h-5 text-[#F2613F] shrink-0" />
+                  <MapPin className="w-5 h-5 text-[#FF5E3A] shrink-0" />
                   <span className="text-base sm:text-lg font-semibold text-white tracking-wide">
                     {BRAND_CONFIG.contact.studio || "Poppy Productions Studio"}
                   </span>
@@ -99,21 +99,21 @@ export default function ContactSection() {
                 </span>
               </div>
 
-              {/* Address: DHA Phase 1 Fort Villas , 54810 */}
+              {/* Address: DHA Phase 1 Fort Villas, 54810 */}
               <div className="text-sm sm:text-base font-normal text-white/90 pl-1 leading-snug">
-                {BRAND_CONFIG.contact.address}
+                <div>{BRAND_CONFIG.contact.address}</div>
                 <div className="text-xs text-white/50 tracking-wider uppercase mt-1">
                   Lahore, Pakistan
                 </div>
               </div>
 
               {/* Phone & Direct WhatsApp Button */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pt-1 border-t border-white/5">
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-white/5">
                 <div className="flex items-center space-x-2.5">
-                  <Phone className="w-4 h-4 text-[#F2613F] shrink-0" />
+                  <Phone className="w-4 h-4 text-[#FF5E3A] shrink-0" />
                   <a
                     href={`tel:${BRAND_CONFIG.contact.phone}`}
-                    className="text-sm sm:text-base font-medium text-white hover:text-[#F2613F] transition-colors"
+                    className="text-sm sm:text-base font-medium text-white hover:text-[#FF5E3A] transition-colors"
                   >
                     {BRAND_CONFIG.contact.phone}
                   </a>
@@ -132,17 +132,17 @@ export default function ContactSection() {
 
               {/* Email */}
               <div className="flex items-center space-x-2.5 pt-1">
-                <Mail className="w-4 h-4 text-[#F2613F] shrink-0" />
+                <Mail className="w-4 h-4 text-[#FF5E3A] shrink-0" />
                 <a
                   href={`mailto:${BRAND_CONFIG.contact.email}`}
-                  className="text-sm sm:text-base font-medium text-white hover:text-[#F2613F] transition-colors break-all"
+                  className="text-sm sm:text-base font-medium text-white hover:text-[#FF5E3A] transition-colors break-all"
                 >
                   {BRAND_CONFIG.contact.email}
                 </a>
               </div>
 
               {/* Production Hours: Open 24 Hours (24/7) */}
-              <div className="flex items-center space-x-2.5 pt-1 text-xs sm:text-sm text-white/70 border-t border-white/5">
+              <div className="flex items-center space-x-2.5 pt-2 text-xs sm:text-sm text-white/70 border-t border-white/5">
                 <Clock className="w-4 h-4 text-white/50 shrink-0" />
                 <span>{BRAND_CONFIG.contact.hours}</span>
               </div>
@@ -156,7 +156,7 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6 relative z-10">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div>
-                  <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 font-medium">
+                  <label className="block text-xs uppercase tracking-widest text-white/80 mb-2 font-medium">
                     Your Name *
                   </label>
                   <input
@@ -165,13 +165,13 @@ export default function ContactSection() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="e.g. Rachel Adams"
-                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-poppy focus:outline-none transition-colors"
+                    placeholder="e.g. Syed Yasir / Ali Khan"
+                    className="w-full rounded-xl border border-white/10 bg-[#171717] px-4 py-3.5 text-sm text-white placeholder-white/30 focus:border-[#FF5E3A] focus:bg-[#1c1c1c] focus:ring-1 focus:ring-[#FF5E3A] focus:outline-none transition-all"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 font-medium">
+                  <label className="block text-xs uppercase tracking-widest text-white/80 mb-2 font-medium">
                     Email Address *
                   </label>
                   <input
@@ -180,51 +180,59 @@ export default function ContactSection() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="rachel@studio.com"
-                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-poppy focus:outline-none transition-colors"
+                    placeholder="name@company.com"
+                    className="w-full rounded-xl border border-white/10 bg-[#171717] px-4 py-3.5 text-sm text-white placeholder-white/30 focus:border-[#FF5E3A] focus:bg-[#1c1c1c] focus:ring-1 focus:ring-[#FF5E3A] focus:outline-none transition-all"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div>
-                  <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 font-medium">
+                  <label className="block text-xs uppercase tracking-widest text-white/80 mb-2 font-medium">
                     Project Type
                   </label>
-                  <select
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleChange}
-                    className="w-full rounded-lg border border-white/10 bg-[#1A1A1A] px-4 py-3 text-base sm:text-sm text-white focus:border-poppy focus:outline-none transition-colors"
-                  >
-                    <option value="Commercial / Advertising">Commercial / Advertising</option>
-                    <option value="Feature Film / Drama">Feature Film / Drama</option>
-                    <option value="Brand Documentary">Brand Documentary</option>
-                    <option value="Music Video">Music Video</option>
-                    <option value="Post-Production & VFX">Post-Production & VFX</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleChange}
+                      className="w-full appearance-none rounded-xl border border-white/10 bg-[#171717] px-4 py-3.5 pr-10 text-sm text-white focus:border-[#FF5E3A] focus:bg-[#1c1c1c] focus:ring-1 focus:ring-[#FF5E3A] focus:outline-none transition-all cursor-pointer"
+                    >
+                      <option value="Commercial / Advertising">Commercial / Advertising</option>
+                      <option value="Feature Film / Cinema">Feature Film / Cinema</option>
+                      <option value="Television / Drama Series">Television / Drama Series</option>
+                      <option value="Brand Documentary">Brand Documentary</option>
+                      <option value="Music Video">Music Video</option>
+                      <option value="Post-Production & VFX">Post-Production & VFX</option>
+                    </select>
+                    <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50 pointer-events-none" />
+                  </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 font-medium">
-                    Estimated Budget
+                  <label className="block text-xs uppercase tracking-widest text-white/80 mb-2 font-medium">
+                    Estimated Budget (PKR)
                   </label>
-                  <select
-                    name="budgetRange"
-                    value={formData.budgetRange}
-                    onChange={handleChange}
-                    className="w-full rounded-lg border border-white/10 bg-[#1A1A1A] px-4 py-3 text-base sm:text-sm text-white focus:border-poppy focus:outline-none transition-colors"
-                  >
-                    <option value="Under $25,000">Under $25,000</option>
-                    <option value="$25,000 - $75,000">$25,000 - $75,000</option>
-                    <option value="$75,000 - $150,000">$75,000 - $150,000</option>
-                    <option value="$150,000+">$150,000+</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      name="budgetRange"
+                      value={formData.budgetRange}
+                      onChange={handleChange}
+                      className="w-full appearance-none rounded-xl border border-white/10 bg-[#171717] px-4 py-3.5 pr-10 text-sm text-white focus:border-[#FF5E3A] focus:bg-[#1c1c1c] focus:ring-1 focus:ring-[#FF5E3A] focus:outline-none transition-all cursor-pointer"
+                    >
+                      <option value="Under PKR 1,000,000">Under PKR 1,000,000 (Under 10 Lakh)</option>
+                      <option value="PKR 1,000,000 - 3,000,000">PKR 1,000,000 - 3,000,000 (10 - 30 Lakh)</option>
+                      <option value="PKR 3,000,000 - 7,500,000">PKR 3,000,000 - 7,500,000 (30 - 75 Lakh)</option>
+                      <option value="PKR 7,500,000 - 15,000,000">PKR 7,500,000 - 15,000,000 (75 Lakh - 1.5 Crore)</option>
+                      <option value="PKR 15,000,000+">PKR 15,000,000+ (1.5 Crore+)</option>
+                    </select>
+                    <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50 pointer-events-none" />
+                  </div>
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 font-medium">
+                <label className="block text-xs uppercase tracking-widest text-white/80 mb-2 font-medium">
                   Project Brief &amp; Details *
                 </label>
                 <textarea
@@ -234,7 +242,7 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Share a brief overview of your vision, timeline, and key requirements..."
-                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-poppy focus:outline-none transition-colors resize-none"
+                  className="w-full rounded-xl border border-white/10 bg-[#171717] p-4 text-sm text-white placeholder-white/30 focus:border-[#FF5E3A] focus:bg-[#1c1c1c] focus:ring-1 focus:ring-[#FF5E3A] focus:outline-none transition-all resize-none"
                 />
               </div>
 
@@ -242,7 +250,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="group relative inline-flex items-center space-x-3 rounded-full bg-[#FF5E3A] px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#E04824] hover:shadow-[0_0_30px_rgba(255,94,58,0.6)] disabled:opacity-50 cursor-pointer"
+                  className="group relative inline-flex items-center space-x-3 rounded-full bg-[#FF5E3A] px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#E04824] hover:shadow-[0_0_25px_rgba(255,94,58,0.6)] disabled:opacity-50 cursor-pointer"
                 >
                   {status === "loading" ? (
                     <>
