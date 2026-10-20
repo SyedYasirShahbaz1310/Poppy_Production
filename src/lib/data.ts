@@ -295,14 +295,14 @@ export const PROJECTS_DATA: Project[] = [
 
 export const TEAM_DATA: TeamMember[] = [
   {
-    id: "muhammad-yasir",
-    name: "Muhammad Yasir",
+    id: "qadeer-bhatti",
+    name: "Qadeer Bhatti",
     role: "Founder & Creative Director",
     division: "POPPY PRODUCTIONS",
-    bio: "Muhammad Yasir is the driving visionary and Creative Director of Poppy Productions. With a deep passion for auteur storytelling, bold cinematic lighting, and modern editorial pacing, Yasir has helmed critically acclaimed commercial campaigns, branded epics, and festival-selected short narratives. His distinctive visual signature unites raw human emotion with world-class technical precision.",
+    bio: "Qadeer Bhatti is the driving visionary and Creative Director of Poppy Productions. With a deep passion for auteur storytelling, bold cinematic lighting, and modern editorial pacing, Qadeer has helmed critically acclaimed commercial campaigns, branded epics, and festival-selected short narratives. His distinctive visual signature unites raw human emotion with world-class technical precision.",
     bioParagraphs: [
-      "Muhammad Yasir is the driving visionary and Creative Director of Poppy Productions. With a deep passion for auteur storytelling, bold cinematic lighting, and modern editorial pacing, Yasir has helmed critically acclaimed commercial campaigns, branded epics, and festival-selected short narratives.",
-      "His distinctive visual signature unites raw human emotion with world-class technical precision. Yasir works directly with international agencies, broadcasters, and streaming platforms to produce memorable cinematic experiences.",
+      "Qadeer Bhatti is the driving visionary and Creative Director of Poppy Productions. With a deep passion for auteur storytelling, bold cinematic lighting, and modern editorial pacing, Qadeer has helmed critically acclaimed commercial campaigns, branded epics, and festival-selected short narratives.",
+      "His distinctive visual signature unites raw human emotion with world-class technical precision. Qadeer works directly with international agencies, broadcasters, and streaming platforms to produce memorable cinematic experiences.",
       "Under his creative direction, Poppy Productions has expanded from boutique commercial production to high-end long-form drama series and award-winning festival features.",
     ],
     highlights: [
