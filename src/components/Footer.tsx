@@ -2,12 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Facebook, Youtube, Instagram } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BRAND_CONFIG } from "@/lib/data";
 
 export default function Footer() {
+  const pathname = usePathname();
   const footerRef = useRef<HTMLElement>(null);
   const ackLinesRef = useRef<(HTMLParagraphElement | null)[]>([]);
   const line1Ref = useRef<HTMLDivElement>(null);
@@ -22,66 +24,86 @@ export default function Footer() {
     const footer = footerRef.current;
     if (!footer) return;
 
+    let tl: gsap.core.Timeline | null = null;
+
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
+      tl = gsap.timeline({
         scrollTrigger: {
           trigger: footer,
-          start: "top 85%",
-          toggleActions: "play reverse play reverse",
+          start: "top 92%",
+          toggleActions: "play none none none", // Never reverse or hide text!
+          once: true,
+        },
+        onComplete: () => {
+          // Permanently clear inline styles so text/logos remain 100% visible
+          gsap.set(
+            [
+              ackLinesRef.current.filter(Boolean),
+              line1Ref.current,
+              logosRef.current.filter(Boolean),
+              line2Ref.current,
+              copyRef.current,
+              socialIconsRef.current.filter(Boolean),
+            ],
+            { clearProps: "all" }
+          );
         },
       });
 
       // 1. Cultural Acknowledgement Staggered Reveal
-      tl.fromTo(
-        ackLinesRef.current.filter(Boolean),
-        {
-          y: 25,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.12,
-          ease: "power3.out",
-        }
-      );
+      const validAckLines = ackLinesRef.current.filter(Boolean);
+      if (validAckLines.length > 0) {
+        tl.fromTo(
+          validAckLines,
+          { y: 20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            stagger: 0.1,
+            ease: "power3.out",
+          }
+        );
+      }
 
       // 2. Expand Divider Line 1 from Left
       if (line1Ref.current) {
         tl.fromTo(
           line1Ref.current,
           { scaleX: 0, opacity: 0 },
-          { scaleX: 1, opacity: 1, duration: 1.0, ease: "power3.out" },
+          { scaleX: 1, opacity: 1, duration: 0.8, ease: "power3.out" },
           "-=0.4"
         );
       }
 
       // 3. Staggered Entrance of the 3 Entity Logos
-      tl.fromTo(
-        logosRef.current.filter(Boolean),
-        {
-          y: 40,
-          opacity: 0,
-          scale: 0.92,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.9,
-          stagger: 0.14,
-          ease: "power3.out",
-        },
-        "-=0.6"
-      );
+      const validLogos = logosRef.current.filter(Boolean);
+      if (validLogos.length > 0) {
+        tl.fromTo(
+          validLogos,
+          {
+            y: 30,
+            opacity: 0,
+            scale: 0.95,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.12,
+            ease: "power3.out",
+          },
+          "-=0.5"
+        );
+      }
 
       // 4. Expand Divider Line 2 from Right
       if (line2Ref.current) {
         tl.fromTo(
           line2Ref.current,
           { scaleX: 0, opacity: 0 },
-          { scaleX: 1, opacity: 1, duration: 1.0, ease: "power3.out" },
+          { scaleX: 1, opacity: 1, duration: 0.8, ease: "power3.out" },
           "-=0.5"
         );
       }
@@ -90,32 +112,57 @@ export default function Footer() {
       if (copyRef.current) {
         tl.fromTo(
           copyRef.current,
-          { x: -30, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
-          "-=0.6"
+          { x: -25, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.7, ease: "power2.out" },
+          "-=0.5"
         );
       }
 
       // 6. Social Icons Elastic Pop-in from Right
-      tl.fromTo(
-        socialIconsRef.current.filter(Boolean),
-        {
-          scale: 0,
-          opacity: 0,
-        },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 0.7,
-          stagger: 0.08,
-          ease: "back.out(2)",
-        },
-        "-=0.6"
-      );
+      const validSocials = socialIconsRef.current.filter(Boolean);
+      if (validSocials.length > 0) {
+        tl.fromTo(
+          validSocials,
+          { scale: 0.7, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: "back.out(1.7)",
+          },
+          "-=0.5"
+        );
+      }
+
+      // If footer is already within viewport on page load/navigation, play immediately
+      const rect = footer.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.95) {
+        tl.play();
+      }
     }, footer);
 
-    return () => ctx.revert();
-  }, []);
+    // Refresh triggers when route finishes rendering
+    const refreshTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+      if (footer) {
+        const rect = footer.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.95 && tl) {
+          tl.play();
+        }
+      }
+    }, 150);
+
+    return () => {
+      clearTimeout(refreshTimer);
+      ctx.revert();
+    };
+  }, [pathname]);
+
+  // Reset array refs before render
+  ackLinesRef.current = [];
+  logosRef.current = [];
+  socialIconsRef.current = [];
 
   return (
     <footer
