@@ -56,7 +56,7 @@ export default function KineticMarquee() {
               className="inline-flex items-center text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light uppercase tracking-tight mx-6 sm:mx-10 text-neutral-900"
             >
               <span>{item}</span>
-              <span className="text-[#cc0000] ml-6 sm:ml-10">•</span>
+              <span className="text-[#FF5E3A] ml-6 sm:ml-10">•</span>
             </span>
           ))}
         </div>
@@ -70,7 +70,7 @@ export default function KineticMarquee() {
               className="inline-flex items-center text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light uppercase tracking-tight mx-6 sm:mx-10 text-neutral-900"
             >
               <span>{item}</span>
-              <span className="text-[#cc0000] ml-6 sm:ml-10">•</span>
+              <span className="text-[#FF5E3A] ml-6 sm:ml-10">•</span>
             </span>
           ))}
         </div>
@@ -88,7 +88,7 @@ export default function KineticMarquee() {
               className="inline-flex items-center text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light uppercase tracking-tight mx-6 sm:mx-10 text-neutral-400"
             >
               <span>{item}</span>
-              <span className="text-[#cc0000] ml-6 sm:ml-10">•</span>
+              <span className="text-[#FF5E3A] ml-6 sm:ml-10">•</span>
             </span>
           ))}
         </div>
@@ -102,7 +102,7 @@ export default function KineticMarquee() {
               className="inline-flex items-center text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light uppercase tracking-tight mx-6 sm:mx-10 text-neutral-400"
             >
               <span>{item}</span>
-              <span className="text-[#cc0000] ml-6 sm:ml-10">•</span>
+              <span className="text-[#FF5E3A] ml-6 sm:ml-10">•</span>
             </span>
           ))}
         </div>

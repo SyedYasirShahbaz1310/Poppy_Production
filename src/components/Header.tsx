@@ -28,7 +28,7 @@ export default function Header({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#cc0000] shadow-md py-2.5 sm:py-3"
+          ? "bg-[#FF5E3A] shadow-md py-2.5 sm:py-3"
           : "bg-gradient-to-b from-black/70 via-black/30 to-transparent py-2.5 sm:py-3 md:py-3.5"
       }`}
     >

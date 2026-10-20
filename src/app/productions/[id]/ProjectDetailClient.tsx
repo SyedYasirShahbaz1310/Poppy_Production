@@ -154,7 +154,7 @@ export default function ProjectDetailClient({
         <button
           onClick={handleShare}
           aria-label="Share Project"
-          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-40 flex items-center justify-center h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-[#cc0000] text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-[#e00000] focus:outline-none"
+          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-40 flex items-center justify-center h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-[#FF5E3A] text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-[#E04824] focus:outline-none"
         >
           {copied ? (
             <Check className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -173,7 +173,7 @@ export default function ProjectDetailClient({
       {/* 2. Synopsis & Trailer Preview Section matching Screenshot 3 */}
       <section className="relative bg-white text-neutral-900 py-20 md:py-28">
         {/* Subtle Top Red Accent Line */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-[#cc0000]" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-[#FF5E3A]" />
 
         <div
           ref={synopsisRef}
@@ -213,7 +213,7 @@ export default function ProjectDetailClient({
 
                 {/* Big Red Circular Play Button matching Screenshot 3 */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-[#cc0000] text-white flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-[#e00000]">
+                  <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-[#FF5E3A] text-white flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-[#E04824]">
                     <Play className="h-7 w-7 sm:h-9 sm:w-9 fill-white translate-x-0.5" />
                   </div>
                 </div>
@@ -303,7 +303,7 @@ export default function ProjectDetailClient({
       </section>
 
       {/* 5. "About Poppy Productions" Banner */}
-      <section className="relative bg-[#cc0000] text-white py-16 md:py-20 text-center">
+      <section className="relative bg-[#FF5E3A] text-white py-16 md:py-20 text-center">
         <div className="mx-auto max-w-4xl px-6 md:px-12 space-y-6">
           <h2 className="text-3xl sm:text-4xl font-light uppercase tracking-[0.2em] text-white">
             About us
@@ -316,7 +316,7 @@ export default function ProjectDetailClient({
           <div className="pt-2">
             <Link
               href="/about"
-              className="inline-block rounded-full border border-white px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-[#cc0000] transition-all hover:scale-105"
+              className="inline-block rounded-full border border-white px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-[#FF5E3A] transition-all hover:scale-105"
             >
               Find out more
             </Link>
@@ -372,7 +372,7 @@ export default function ProjectDetailClient({
           <div className="text-center pt-6">
             <Link
               href="/#productions"
-              className="inline-block rounded-full border border-white/60 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-[#cc0000] transition-all hover:scale-105"
+              className="inline-block rounded-full border border-white/60 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-[#FF5E3A] transition-all hover:scale-105"
             >
               VIEW ALL PRODUCTIONS
             </Link>
@@ -385,7 +385,7 @@ export default function ProjectDetailClient({
         <div className="mx-auto max-w-7xl flex items-center justify-between text-xs sm:text-sm font-light tracking-wider uppercase text-white/80">
           <Link
             href={`/productions/${prevProject.id}`}
-            className="flex items-center space-x-2 hover:text-[#cc0000] transition-colors"
+            className="flex items-center space-x-2 hover:text-[#FF5E3A] transition-colors"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>Previous Project: {prevProject.title}</span>
@@ -394,14 +394,14 @@ export default function ProjectDetailClient({
           <Link
             href="/#productions"
             aria-label="All Productions"
-            className="hover:text-[#cc0000] transition-colors hidden sm:block"
+            className="hover:text-[#FF5E3A] transition-colors hidden sm:block"
           >
             <LayoutGrid className="w-5 h-5" />
           </Link>
 
           <Link
             href={`/productions/${nextProject.id}`}
-            className="flex items-center space-x-2 hover:text-[#cc0000] transition-colors"
+            className="flex items-center space-x-2 hover:text-[#FF5E3A] transition-colors"
           >
             <span>Next Project: {nextProject.title}</span>
             <ChevronRight className="w-4 h-4" />

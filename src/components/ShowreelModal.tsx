@@ -98,7 +98,7 @@ export default function ShowreelModal({
       {/* Top bar with title and close button */}
       <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-4 py-4 md:px-12 bg-gradient-to-b from-black/80 to-transparent">
         <div className="flex items-center space-x-2.5 sm:space-x-3">
-          <span className="inline-block w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#cc0000] animate-ping" />
+          <span className="inline-block w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#FF5E3A] animate-ping" />
           <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-white/70 font-semibold truncate max-w-[200px] sm:max-w-none">
             {title}
           </span>
@@ -106,7 +106,7 @@ export default function ShowreelModal({
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="group flex items-center space-x-1.5 sm:space-x-2 rounded-full border border-white/20 bg-black/50 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs uppercase tracking-widest text-white transition-all hover:border-[#cc0000] hover:bg-[#cc0000] hover:text-white"
+          className="group flex items-center space-x-1.5 sm:space-x-2 rounded-full border border-white/20 bg-black/50 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs uppercase tracking-widest text-white transition-all hover:border-[#FF5E3A] hover:bg-[#FF5E3A] hover:text-white"
         >
           <span>CLOSE</span>
           <X className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:rotate-90" />
@@ -132,7 +132,7 @@ export default function ShowreelModal({
             className="group relative h-1.5 w-full cursor-pointer rounded-full bg-white/20 overflow-hidden"
           >
             <div
-              className="h-full bg-[#cc0000] transition-all duration-100"
+              className="h-full bg-[#FF5E3A] transition-all duration-100"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -141,14 +141,14 @@ export default function ShowreelModal({
             <div className="flex items-center space-x-4">
               <button
                 onClick={togglePlay}
-                className="text-white hover:text-[#cc0000] transition-colors"
+                className="text-white hover:text-[#FF5E3A] transition-colors"
                 aria-label={isPlaying ? "Pause" : "Play"}
               >
                 {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
               </button>
               <button
                 onClick={toggleMute}
-                className="text-white hover:text-[#cc0000] transition-colors"
+                className="text-white hover:text-[#FF5E3A] transition-colors"
                 aria-label={isMuted ? "Unmute" : "Mute"}
               >
                 {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}

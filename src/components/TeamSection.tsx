@@ -103,10 +103,10 @@ export default function TeamSection() {
 
               {/* Name & Right Arrow matching Screenshots 2 & 3 */}
               <div className="space-y-2 pt-1">
-                <h3 className="text-lg sm:text-xl font-medium tracking-wide text-neutral-900 group-hover:text-[#cc0000] transition-colors">
+                <h3 className="text-lg sm:text-xl font-medium tracking-wide text-neutral-900 group-hover:text-[#FF5E3A] transition-colors">
                   {member.name}
                 </h3>
-                <div className="flex items-center text-neutral-800 group-hover:text-[#cc0000] transition-colors">
+                <div className="flex items-center text-neutral-800 group-hover:text-[#FF5E3A] transition-colors">
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
                 </div>
               </div>

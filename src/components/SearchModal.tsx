@@ -98,7 +98,7 @@ export default function SearchModal({
 
       {/* Top-Down Sliding Search Bar matching Bunya Screenshot 1 */}
       <div
-        className={`fixed top-0 left-0 right-0 z-[140] bg-[#cc0000] text-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`fixed top-0 left-0 right-0 z-[140] bg-[#FF5E3A] text-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -158,7 +158,7 @@ export default function SearchModal({
                     key={term}
                     type="button"
                     onClick={() => setQuery(term)}
-                    className="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs text-white hover:bg-white hover:text-[#cc0000] transition-colors"
+                    className="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs text-white hover:bg-white hover:text-[#FF5E3A] transition-colors"
                   >
                     {term}
                   </button>

@@ -4,7 +4,7 @@
 
 :root {
   --font-opensans: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --poppy-accent: #F2613F;
+  --poppy-accent: #FF5E3A;
 }
 
 html {
@@ -69,12 +69,12 @@ html.lenis body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #F2613F;
+  background: #FF5E3A;
 }
 
 /* Selection */
 ::selection {
-  background-color: #F2613F;
+  background-color: #FF5E3A;
   color: #FFFFFF;
 }
 
@@ -90,6 +90,6 @@ html.lenis body {
 }
 
 .text-stroke-poppy {
-  -webkit-text-stroke: 1.5px #F2613F;
+  -webkit-text-stroke: 1.5px #FF5E3A;
   color: transparent;
 }

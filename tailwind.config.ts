@@ -11,13 +11,13 @@ const config: Config = {
     extend: {
       colors: {
         background: "#0A0A0A",
-        "bunya-red": "#cc0000",
-        "bunya-red-dark": "#b30000",
+        "bunya-red": "#FF5E3A",
+        "bunya-red-dark": "#E04824",
         poppy: {
-          DEFAULT: "#cc0000",
-          red: "#cc0000",
-          orange: "#F2613F",
-          glow: "#FF5E3A",
+          DEFAULT: "#FF5E3A",
+          red: "#FF5E3A",
+          orange: "#FF5E3A",
+          glow: "#FF7A5C",
         },
       },
       fontFamily: {

@@ -13,7 +13,7 @@ export default function ProductionsGrid({ onSelectProject }: ProductionsGridProp
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="productions" className="relative bg-[#cc0000] py-24 md:py-36 text-white">
+    <section id="productions" className="relative bg-[#FF5E3A] py-24 md:py-36 text-white">
       <div className="mx-auto max-w-7xl px-6 md:px-12 space-y-16">
         {/* Section Heading matching Bunya Row 9 */}
         <div className="text-center sm:text-left">
@@ -92,7 +92,7 @@ export default function ProductionsGrid({ onSelectProject }: ProductionsGridProp
         <div className="text-center pt-8">
           <a
             href="#productions"
-            className="inline-block rounded-full border border-white px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-[#cc0000] transition-colors"
+            className="inline-block rounded-full border border-white px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-[#FF5E3A] transition-colors"
           >
             View all
           </a>

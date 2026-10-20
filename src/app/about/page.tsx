@@ -36,7 +36,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. POPPY GROUP Section on SOLID RED Background matching Bunya Row 1 */}
-      <section className="relative bg-[#cc0000] py-16 sm:py-24 md:py-36 text-white">
+      <section className="relative bg-[#FF5E3A] py-16 sm:py-24 md:py-36 text-white">
         <div className="mx-auto max-w-5xl px-4 sm:px-8 md:px-12 space-y-8 sm:space-y-10 text-center sm:text-left">
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.18em] sm:tracking-[0.2em] text-white">
             POPPY GROUP
@@ -81,7 +81,7 @@ export default function AboutPage() {
               <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wider text-neutral-900">
                 POPPY PRODUCTIONS
               </h3>
-              <p className="text-xs uppercase tracking-widest text-[#cc0000] font-semibold">
+              <p className="text-xs uppercase tracking-widest text-[#FF5E3A] font-semibold">
                 FILM &amp; TELEVISION
               </p>
               <p className="text-sm text-neutral-600 font-light leading-relaxed">
@@ -96,7 +96,7 @@ export default function AboutPage() {
               <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wider text-neutral-900">
                 POPPY ENTERTAINMENT
               </h3>
-              <p className="text-xs uppercase tracking-widest text-[#cc0000] font-semibold">
+              <p className="text-xs uppercase tracking-widest text-[#FF5E3A] font-semibold">
                 COMMERCIAL &amp; DIGITAL
               </p>
               <p className="text-sm text-neutral-600 font-light leading-relaxed">
@@ -110,7 +110,7 @@ export default function AboutPage() {
               <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wider text-neutral-900">
                 DARK MATTER
               </h3>
-              <p className="text-xs uppercase tracking-widest text-[#cc0000] font-semibold">
+              <p className="text-xs uppercase tracking-widest text-[#FF5E3A] font-semibold">
                 POST-PRODUCTION &amp; VFX
               </p>
               <p className="text-sm text-neutral-600 font-light leading-relaxed">

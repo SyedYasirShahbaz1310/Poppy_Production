@@ -167,7 +167,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="relative bg-[#cc0000] text-white pt-16 sm:pt-24 pb-12 select-none overflow-hidden"
+      className="relative bg-[#FF5E3A] text-white pt-16 sm:pt-24 pb-12 select-none overflow-hidden"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-8 md:px-12 space-y-12 sm:space-y-16">
         {/* Cultural Acknowledgement Section matching Screenshot 2 */}

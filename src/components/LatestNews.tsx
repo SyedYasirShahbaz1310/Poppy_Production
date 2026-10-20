@@ -54,7 +54,7 @@ export default function LatestNews() {
           </h2>
           <Link
             href="#news"
-            className="text-xs uppercase tracking-[0.2em] text-neutral-600 hover:text-[#cc0000] font-semibold transition-colors"
+            className="text-xs uppercase tracking-[0.2em] text-neutral-600 hover:text-[#FF5E3A] font-semibold transition-colors"
           >
             View all news
           </Link>
@@ -68,8 +68,8 @@ export default function LatestNews() {
               onClick={() => setActiveCategory(cat)}
               className={`rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                 activeCategory === cat
-                  ? "bg-[#cc0000] text-white"
-                  : "border border-neutral-300 text-neutral-700 hover:border-[#cc0000] hover:text-[#cc0000]"
+                  ? "bg-[#FF5E3A] text-white"
+                  : "border border-neutral-300 text-neutral-700 hover:border-[#FF5E3A] hover:text-[#FF5E3A]"
               }`}
             >
               {cat}
@@ -95,13 +95,13 @@ export default function LatestNews() {
 
               {/* Meta */}
               <div className="flex items-center space-x-2 text-[11px] uppercase tracking-wider text-neutral-500">
-                <span className="text-[#cc0000] font-semibold">{item.category}</span>
+                <span className="text-[#FF5E3A] font-semibold">{item.category}</span>
                 <span>•</span>
                 <span>{item.date}</span>
               </div>
 
               {/* Title */}
-              <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tight text-neutral-900 leading-snug group-hover:text-[#cc0000] transition-colors">
+              <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tight text-neutral-900 leading-snug group-hover:text-[#FF5E3A] transition-colors">
                 {item.title}
               </h3>
 
@@ -112,7 +112,7 @@ export default function LatestNews() {
 
               {/* Link */}
               <div className="pt-2">
-                <span className="inline-flex items-center space-x-1 text-xs uppercase tracking-widest font-semibold text-neutral-900 group-hover:text-[#cc0000] transition-colors">
+                <span className="inline-flex items-center space-x-1 text-xs uppercase tracking-widest font-semibold text-neutral-900 group-hover:text-[#FF5E3A] transition-colors">
                   <span>Read more</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>

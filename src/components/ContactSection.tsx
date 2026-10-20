@@ -67,13 +67,13 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left Column: Direct Inquiries Info & Studio Card */}
           <div className="lg:col-span-5 space-y-6 sm:space-y-8">
-            <div className="inline-flex items-center space-x-2 rounded-full border border-[#cc0000]/40 bg-[#cc0000]/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#cc0000]">
+            <div className="inline-flex items-center space-x-2 rounded-full border border-[#FF5E3A]/40 bg-[#FF5E3A]/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#FF5E3A]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>START A COLLABORATION</span>
             </div>
 
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight leading-tight">
-              BRING YOUR STORY TO LIFE WITH <span className="text-[#cc0000]">POPPY.</span>
+              BRING YOUR STORY TO LIFE WITH <span className="text-[#FF5E3A]">POPPY.</span>
             </h2>
 
             <p className="text-white/60 text-sm sm:text-base leading-relaxed">
@@ -242,7 +242,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="group relative inline-flex items-center space-x-3 rounded-full bg-[#cc0000] px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#b30000] hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] disabled:opacity-50 cursor-pointer"
+                  className="group relative inline-flex items-center space-x-3 rounded-full bg-[#FF5E3A] px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#E04824] hover:shadow-[0_0_30px_rgba(255,94,58,0.6)] disabled:opacity-50 cursor-pointer"
                 >
                   {status === "loading" ? (
                     <>

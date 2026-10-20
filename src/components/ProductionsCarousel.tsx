@@ -142,7 +142,7 @@ export default function ProductionsCarousel({
     <section
       ref={sectionRef}
       id="productions"
-      className="relative bg-[#cc0000] py-16 sm:py-20 md:py-28 text-white overflow-hidden select-none"
+      className="relative bg-[#FF5E3A] py-16 sm:py-20 md:py-28 text-white overflow-hidden select-none"
     >
       {/* Section Header matching Screenshot 4 */}
       <div className="mx-auto max-w-7xl px-4 sm:px-8 md:px-12 text-center mb-6 sm:mb-12">
@@ -175,7 +175,7 @@ export default function ProductionsCarousel({
             setDirection(-1);
           }}
           aria-label="Scroll Carousel Left"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-white hover:text-[#cc0000] hover:scale-110 shadow-lg focus:outline-none"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-white hover:text-[#FF5E3A] hover:scale-110 shadow-lg focus:outline-none"
         >
           <ChevronLeft className="h-6 w-6 stroke-[2]" />
         </button>
@@ -187,7 +187,7 @@ export default function ProductionsCarousel({
             setDirection(1);
           }}
           aria-label="Scroll Carousel Right"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-white hover:text-[#cc0000] hover:scale-110 shadow-lg focus:outline-none"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-white hover:text-[#FF5E3A] hover:scale-110 shadow-lg focus:outline-none"
         >
           <ChevronRight className="h-6 w-6 stroke-[2]" />
         </button>
@@ -274,7 +274,7 @@ export default function ProductionsCarousel({
                 <div
                   className={`absolute inset-0 p-6 flex flex-col justify-end transition-colors duration-500 z-10 ${
                     isHovered
-                      ? "bg-gradient-to-t from-[#cc0000]/90 via-black/40 to-transparent"
+                      ? "bg-gradient-to-t from-[#FF5E3A]/90 via-black/40 to-transparent"
                       : "bg-gradient-to-t from-black/90 via-black/30 to-transparent"
                   }`}
                 >
@@ -338,7 +338,7 @@ export default function ProductionsCarousel({
         {/* View All Button matching Screenshot 4 & Bunya */}
         <Link
           href="/productions"
-          className="inline-block rounded-full border border-white/80 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-white hover:text-[#cc0000] hover:scale-105"
+          className="inline-block rounded-full border border-white/80 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-white hover:text-[#FF5E3A] hover:scale-105"
         >
           View all
         </Link>

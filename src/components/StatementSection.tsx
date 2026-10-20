@@ -97,7 +97,7 @@ export default function StatementSection() {
         <div ref={buttonRef}>
           <Link
             href="/about"
-            className="inline-block rounded-full border border-neutral-900 px-6 sm:px-8 py-3 sm:py-3.5 text-xs font-semibold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-neutral-900 transition-all duration-300 hover:bg-[#cc0000] hover:border-[#cc0000] hover:text-white hover:scale-105"
+            className="inline-block rounded-full border border-neutral-900 px-6 sm:px-8 py-3 sm:py-3.5 text-xs font-semibold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-neutral-900 transition-all duration-300 hover:bg-[#FF5E3A] hover:border-[#FF5E3A] hover:text-white hover:scale-105"
           >
             FIND OUT MORE
           </Link>

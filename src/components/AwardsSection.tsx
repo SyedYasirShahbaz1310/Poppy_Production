@@ -136,7 +136,7 @@ export default function AwardsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#cc0000] py-16 sm:py-20 md:py-28 text-white overflow-hidden [perspective:1000px]"
+      className="relative bg-[#FF5E3A] py-16 sm:py-20 md:py-28 text-white overflow-hidden [perspective:1000px]"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-8 md:px-12 text-center space-y-10 sm:space-y-12">
         {/* Main Heading matching Screenshot 1 */}

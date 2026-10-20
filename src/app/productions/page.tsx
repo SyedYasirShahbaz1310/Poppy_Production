@@ -17,7 +17,7 @@ export default function ProductionsPage() {
         <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold uppercase tracking-[0.18em] sm:tracking-[0.25em] text-white">
           PRODUCTIONS
         </h1>
-        <div className="mx-auto h-[1px] w-20 sm:w-24 bg-[#cc0000] my-4 sm:my-6" />
+        <div className="mx-auto h-[1px] w-20 sm:w-24 bg-[#FF5E3A] my-4 sm:my-6" />
         <p className="max-w-2xl mx-auto text-xs sm:text-base font-light text-white/70">
           A showcase of auteur storytelling, breathtaking cinematography, and world-class production execution across film, television, and global brand campaigns.
         </p>

@@ -5,7 +5,7 @@ export const BRAND_CONFIG = {
   tagline: "WE CREATE AWARD-WINNING FILM, VIDEO AND DIGITAL PRODUCTIONS",
   subtext:
     "Poppy Productions is a premier creative production house working with visionary talent to bring unforgettable visual stories to life.",
-  accentColor: "#F2613F",
+  accentColor: "#FF5E3A",
   accentOrange: "#FF5E3A",
   socials: {
     instagram: "https://www.instagram.com/poppyproductions22/?hl=en",
