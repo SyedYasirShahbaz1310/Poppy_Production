@@ -118,7 +118,7 @@ export default function SearchModal({
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="SEARCH"
                 aria-label="Search Poppy Productions"
-                className="w-full bg-transparent text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-wider text-white placeholder-white/50 focus:outline-none pr-12"
+                className="w-full bg-transparent text-2xl sm:text-4xl md:text-5xl font-light uppercase tracking-wider text-white placeholder-white/50 focus:outline-none pr-12"
               />
 
               {/* Close Button matching Screenshot 1 */}
@@ -128,13 +128,13 @@ export default function SearchModal({
                 aria-label="Close Search"
                 className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-white hover:opacity-75 transition-transform duration-300 hover:rotate-90 focus:outline-none"
               >
-                <X className="w-6 h-6 sm:w-7 sm:h-7 stroke-[2]" />
+                <X className="w-5 h-5 sm:w-7 sm:h-7 stroke-[2]" />
               </button>
             </div>
 
             {/* Helper Text below underline matching Screenshot 1 */}
             <div className="flex items-center justify-between pt-3">
-              <span className="text-xs sm:text-sm text-white/90 font-light tracking-wide">
+              <span className="text-[11px] sm:text-sm text-white/90 font-light tracking-wide">
                 Hit enter to search or ESC to close
               </span>
               {loading && (

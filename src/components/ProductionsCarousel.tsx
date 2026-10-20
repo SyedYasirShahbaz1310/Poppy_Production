@@ -142,20 +142,20 @@ export default function ProductionsCarousel({
     <section
       ref={sectionRef}
       id="productions"
-      className="relative bg-[#cc0000] py-20 md:py-28 text-white overflow-hidden select-none"
+      className="relative bg-[#cc0000] py-16 sm:py-20 md:py-28 text-white overflow-hidden select-none"
     >
       {/* Section Header matching Screenshot 4 */}
-      <div className="mx-auto max-w-7xl px-6 md:px-12 text-center mb-8 sm:mb-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8 md:px-12 text-center mb-6 sm:mb-12">
         <h2
           ref={headingRef}
-          className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.25em] text-white"
+          className="text-2xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.2em] sm:tracking-[0.25em] text-white"
         >
           PRODUCTIONS
         </h2>
         {/* Thin horizontal line divider matching Screenshot 4 */}
         <div
           ref={dividerRef}
-          className="mx-auto h-[1px] w-24 bg-white/40 my-6 origin-center"
+          className="mx-auto h-[1px] w-20 sm:w-24 bg-white/40 my-4 sm:my-6 origin-center"
         />
       </div>
 
@@ -219,7 +219,7 @@ export default function ProductionsCarousel({
                 href={`/productions/${project.id}`}
                 onMouseEnter={() => setHoveredId(uniqueKey)}
                 onMouseLeave={() => setHoveredId(null)}
-                className="group relative flex-shrink-0 w-[280px] sm:w-[340px] md:w-[380px] h-[400px] sm:h-[460px] md:h-[490px] overflow-hidden rounded bg-black shadow-2xl transition-transform duration-500 hover:scale-[1.02] cursor-pointer block"
+                className="group relative flex-shrink-0 w-[78vw] max-w-[310px] sm:w-[340px] md:w-[380px] h-[390px] sm:h-[460px] md:h-[490px] overflow-hidden rounded bg-black shadow-2xl transition-transform duration-500 hover:scale-[1.02] cursor-pointer block"
               >
                 {/* Poster Image */}
                 <img
@@ -303,6 +303,33 @@ export default function ProductionsCarousel({
               </Link>
             );
           })}
+        </div>
+
+        {/* Mobile Swipe / Arrow Controls */}
+        <div className="flex md:hidden items-center justify-center space-x-4 pt-4 px-4">
+          <button
+            onClick={() => {
+              scrollStep(-1);
+              setDirection(-1);
+            }}
+            aria-label="Previous Project"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 active:scale-95 transition-transform"
+          >
+            <ChevronLeft className="h-5 w-5 stroke-[2]" />
+          </button>
+          <span className="text-[10px] uppercase tracking-widest text-white/70 font-mono">
+            Swipe / Tap
+          </span>
+          <button
+            onClick={() => {
+              scrollStep(1);
+              setDirection(1);
+            }}
+            aria-label="Next Project"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 active:scale-95 transition-transform"
+          >
+            <ChevronRight className="h-5 w-5 stroke-[2]" />
+          </button>
         </div>
       </div>
 

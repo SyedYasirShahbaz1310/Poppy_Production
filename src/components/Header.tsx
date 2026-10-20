@@ -32,21 +32,21 @@ export default function Header({
           : "bg-gradient-to-b from-black/70 via-black/30 to-transparent py-2.5 sm:py-3 md:py-3.5"
       }`}
     >
-      <div className="flex w-full items-center justify-between px-6 sm:px-8 md:px-10">
+      <div className="flex w-full items-center justify-between px-4 sm:px-8 md:px-10">
         {/* Left: Brand Logo matching Bunya Screenshot 1 */}
         <Link href="/" className="group flex items-center">
-          <div className="flex flex-col text-white tracking-[0.25em] select-none">
-            <span className="text-xl sm:text-2xl md:text-[26px] font-bold tracking-[0.28em] leading-none">
+          <div className="flex flex-col text-white tracking-[0.22em] sm:tracking-[0.25em] select-none">
+            <span className="text-lg sm:text-2xl md:text-[26px] font-bold tracking-[0.24em] sm:tracking-[0.28em] leading-none">
               POPPY
             </span>
-            <span className="text-[9px] sm:text-[10px] tracking-[0.34em] font-light opacity-90 leading-none mt-1 sm:mt-1.5">
+            <span className="text-[8px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.34em] font-light opacity-90 leading-none mt-1 sm:mt-1.5">
               PRODUCTIONS
             </span>
           </div>
         </Link>
 
         {/* Right: Search & MENU matching Screenshot 1 (No Shop icon) */}
-        <div className="flex items-center space-x-6 sm:space-x-8">
+        <div className="flex items-center space-x-4 sm:space-x-8">
           {/* Search Icon */}
           <button
             onClick={onOpenSearch}

@@ -57,25 +57,25 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-[105] flex items-center justify-center bg-black/95 backdrop-blur-2xl p-4 sm:p-6 md:p-10">
-      <div className="relative w-full max-w-6xl max-h-[92vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#101010] p-6 md:p-8 shadow-2xl space-y-6">
+    <div className="fixed inset-0 z-[105] flex items-center justify-center bg-black/95 backdrop-blur-2xl p-3 sm:p-6 md:p-10">
+      <div className="relative w-full max-w-6xl max-h-[92vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#101010] p-4 sm:p-6 md:p-8 shadow-2xl space-y-4 sm:space-y-6">
         {/* Top Header */}
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
-          <div className="flex items-center space-x-3">
-            <span className="rounded-full bg-poppy/15 border border-poppy/40 px-3 py-1 text-xs font-bold uppercase tracking-widest text-poppy">
+        <div className="flex items-center justify-between border-b border-white/10 pb-3 sm:pb-4">
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <span className="rounded-full bg-poppy/15 border border-poppy/40 px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-poppy">
               {project.category}
             </span>
-            <span className="text-xs uppercase tracking-widest text-white/50">
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest text-white/50">
               {project.year} • {project.duration}
             </span>
           </div>
 
           <button
             onClick={onClose}
-            className="group flex items-center space-x-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-widest text-white hover:border-poppy hover:bg-poppy hover:text-white transition-all"
+            className="group flex items-center space-x-1.5 sm:space-x-2 rounded-full border border-white/20 bg-white/5 px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-xs uppercase tracking-widest text-white hover:border-poppy hover:bg-poppy hover:text-white transition-all"
           >
             <span>CLOSE</span>
-            <X className="w-4 h-4 transition-transform group-hover:rotate-90" />
+            <X className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:rotate-90" />
           </button>
         </div>
 

@@ -136,16 +136,16 @@ export default function AwardsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#cc0000] py-20 md:py-28 text-white overflow-hidden [perspective:1000px]"
+      className="relative bg-[#cc0000] py-16 sm:py-20 md:py-28 text-white overflow-hidden [perspective:1000px]"
     >
-      <div className="mx-auto max-w-7xl px-6 md:px-12 text-center space-y-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8 md:px-12 text-center space-y-10 sm:space-y-12">
         {/* Main Heading matching Screenshot 1 */}
         <div className="space-y-6">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal uppercase tracking-[0.18em] text-white flex flex-wrap justify-center items-center [perspective:800px]">
+          <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-normal uppercase tracking-[0.14em] sm:tracking-[0.18em] text-white flex flex-wrap justify-center items-center [perspective:800px]">
             {words.map((word, i) => (
               <span
                 key={i}
-                className="inline-block overflow-hidden mr-2 sm:mr-3 mb-1"
+                className="inline-block overflow-hidden mr-1.5 sm:mr-3 mb-1"
               >
                 <span
                   ref={(el) => {
@@ -162,14 +162,14 @@ export default function AwardsSection() {
           {/* Thin horizontal line divider with glowing shimmer */}
           <div
             ref={lineRef}
-            className="mx-auto h-[1px] w-28 bg-white/40 origin-center relative overflow-hidden"
+            className="mx-auto h-[1px] w-20 sm:w-28 bg-white/40 origin-center relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent -translate-x-full animate-[shimmer_2.5s_infinite]" />
           </div>
         </div>
 
         {/* 5 White Award Laurels Row matching Screenshot 1 */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-12 items-center justify-items-center pt-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-10 items-center justify-items-center pt-2">
           {/* 1. Venice Film Festival */}
           <div
             ref={(el) => {

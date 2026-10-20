@@ -75,18 +75,18 @@ export default function StatementSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white py-28 md:py-40 text-black text-center overflow-hidden"
+      className="relative bg-white py-20 sm:py-28 md:py-40 text-black text-center overflow-hidden"
     >
-      <div className="mx-auto max-w-5xl px-6 md:px-12 space-y-12">
+      <div className="mx-auto max-w-5xl px-4 sm:px-8 md:px-12 space-y-10 sm:space-y-12">
         {/* Main Editorial Statement matching Screenshot 3 */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-light uppercase tracking-[0.08em] leading-snug sm:leading-tight text-neutral-900 font-sans flex flex-wrap justify-center">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[42px] font-light uppercase tracking-[0.05em] sm:tracking-[0.08em] leading-snug sm:leading-tight text-neutral-900 font-sans flex flex-wrap justify-center">
           {words.map((word, i) => (
             <span
               key={i}
               ref={(el) => {
                 wordsRef.current[i] = el;
               }}
-              className="inline-block mr-2 sm:mr-3 mb-1 select-none will-change-transform"
+              className="inline-block mr-1.5 sm:mr-3 mb-1 select-none will-change-transform"
             >
               {word}
             </span>
@@ -97,7 +97,7 @@ export default function StatementSection() {
         <div ref={buttonRef}>
           <Link
             href="/about"
-            className="inline-block rounded-full border border-neutral-900 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-900 transition-all duration-300 hover:bg-[#cc0000] hover:border-[#cc0000] hover:text-white hover:scale-105"
+            className="inline-block rounded-full border border-neutral-900 px-6 sm:px-8 py-3 sm:py-3.5 text-xs font-semibold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-neutral-900 transition-all duration-300 hover:bg-[#cc0000] hover:border-[#cc0000] hover:text-white hover:scale-105"
           >
             FIND OUT MORE
           </Link>

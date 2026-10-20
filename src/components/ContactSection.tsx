@@ -62,17 +62,17 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-24 md:py-32 bg-[#0A0A0A] text-white">
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <section id="contact" className="relative py-16 sm:py-24 md:py-32 bg-[#0A0A0A] text-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left Column: Direct Inquiries Info & Studio Card */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
             <div className="inline-flex items-center space-x-2 rounded-full border border-[#cc0000]/40 bg-[#cc0000]/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#cc0000]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>START A COLLABORATION</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight leading-tight">
               BRING YOUR STORY TO LIFE WITH <span className="text-[#cc0000]">POPPY.</span>
             </h2>
 
@@ -83,11 +83,11 @@ export default function ContactSection() {
             </p>
 
             {/* Lahore Studio Card matching Screenshot 2 */}
-            <div className="rounded-2xl border border-white/10 bg-[#121212] p-6 sm:p-7 shadow-2xl space-y-5">
+            <div className="rounded-2xl border border-white/10 bg-[#121212] p-5 sm:p-7 shadow-2xl space-y-4 sm:space-y-5">
               {/* Studio Header: Location Pin & Green Live Dot */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2.5">
-                  <MapPin className="w-5 h-5 text-[#F2613F]" />
+                  <MapPin className="w-5 h-5 text-[#F2613F] shrink-0" />
                   <span className="text-base sm:text-lg font-semibold text-white tracking-wide">
                     {BRAND_CONFIG.contact.studio || "Poppy Productions Studio"}
                   </span>
@@ -110,7 +110,7 @@ export default function ContactSection() {
               {/* Phone & Direct WhatsApp Button */}
               <div className="flex flex-wrap items-center justify-between gap-3 pt-1 border-t border-white/5">
                 <div className="flex items-center space-x-2.5">
-                  <Phone className="w-4 h-4 text-[#F2613F]" />
+                  <Phone className="w-4 h-4 text-[#F2613F] shrink-0" />
                   <a
                     href={`tel:${BRAND_CONFIG.contact.phone}`}
                     className="text-sm sm:text-base font-medium text-white hover:text-[#F2613F] transition-colors"
@@ -132,10 +132,10 @@ export default function ContactSection() {
 
               {/* Email */}
               <div className="flex items-center space-x-2.5 pt-1">
-                <Mail className="w-4 h-4 text-[#F2613F]" />
+                <Mail className="w-4 h-4 text-[#F2613F] shrink-0" />
                 <a
                   href={`mailto:${BRAND_CONFIG.contact.email}`}
-                  className="text-sm sm:text-base font-medium text-white hover:text-[#F2613F] transition-colors"
+                  className="text-sm sm:text-base font-medium text-white hover:text-[#F2613F] transition-colors break-all"
                 >
                   {BRAND_CONFIG.contact.email}
                 </a>
@@ -150,11 +150,11 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column: Interactive Form */}
-          <div className="lg:col-span-7 rounded-2xl border border-white/10 bg-[#121212] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+          <div className="lg:col-span-7 rounded-2xl border border-white/10 bg-[#121212] p-5 sm:p-8 md:p-12 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-poppy/10 blur-[100px] pointer-events-none rounded-full" />
 
-            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6 relative z-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div>
                   <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 font-medium">
                     Your Name *
@@ -166,7 +166,7 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. Rachel Adams"
-                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-poppy focus:outline-none transition-colors"
+                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-poppy focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -181,12 +181,12 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="rachel@studio.com"
-                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-poppy focus:outline-none transition-colors"
+                    className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-poppy focus:outline-none transition-colors"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div>
                   <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 font-medium">
                     Project Type
@@ -195,7 +195,7 @@ export default function ContactSection() {
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
-                    className="w-full rounded-lg border border-white/10 bg-[#1A1A1A] px-4 py-3 text-sm text-white focus:border-poppy focus:outline-none transition-colors"
+                    className="w-full rounded-lg border border-white/10 bg-[#1A1A1A] px-4 py-3 text-base sm:text-sm text-white focus:border-poppy focus:outline-none transition-colors"
                   >
                     <option value="Commercial / Advertising">Commercial / Advertising</option>
                     <option value="Feature Film / Drama">Feature Film / Drama</option>
@@ -213,7 +213,7 @@ export default function ContactSection() {
                     name="budgetRange"
                     value={formData.budgetRange}
                     onChange={handleChange}
-                    className="w-full rounded-lg border border-white/10 bg-[#1A1A1A] px-4 py-3 text-sm text-white focus:border-poppy focus:outline-none transition-colors"
+                    className="w-full rounded-lg border border-white/10 bg-[#1A1A1A] px-4 py-3 text-base sm:text-sm text-white focus:border-poppy focus:outline-none transition-colors"
                   >
                     <option value="Under $25,000">Under $25,000</option>
                     <option value="$25,000 - $75,000">$25,000 - $75,000</option>
@@ -234,7 +234,7 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Share a brief overview of your vision, timeline, and key requirements..."
-                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-poppy focus:outline-none transition-colors resize-none"
+                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-poppy focus:outline-none transition-colors resize-none"
                 />
               </div>
 

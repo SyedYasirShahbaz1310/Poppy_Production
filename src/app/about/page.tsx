@@ -25,24 +25,24 @@ export default function AboutPage() {
         </div>
 
         {/* Editorial Text Content */}
-        <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 space-y-4 pt-16">
-          <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[130px] font-extralight uppercase tracking-[0.22em] text-white select-none">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 md:px-12 space-y-3 sm:space-y-4 pt-16">
+          <h1 className="text-4xl sm:text-7xl md:text-9xl lg:text-[130px] font-extralight uppercase tracking-[0.16em] sm:tracking-[0.22em] text-white select-none">
             ABOUT
           </h1>
-          <p className="text-xs sm:text-sm font-light uppercase tracking-[0.35em] text-white/85 max-w-2xl mx-auto">
+          <p className="text-[11px] sm:text-sm font-light uppercase tracking-[0.25em] sm:tracking-[0.35em] text-white/85 max-w-2xl mx-auto">
             THE CREATIVE COLLECTIVE &amp; STORYTELLERS BEHIND POPPY PRODUCTIONS
           </p>
         </div>
       </section>
 
       {/* 2. POPPY GROUP Section on SOLID RED Background matching Bunya Row 1 */}
-      <section className="relative bg-[#cc0000] py-24 md:py-36 text-white">
-        <div className="mx-auto max-w-5xl px-6 md:px-12 space-y-10 text-center sm:text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.2em] text-white">
+      <section className="relative bg-[#cc0000] py-16 sm:py-24 md:py-36 text-white">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8 md:px-12 space-y-8 sm:space-y-10 text-center sm:text-left">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.18em] sm:tracking-[0.2em] text-white">
             POPPY GROUP
           </h2>
 
-          <div className="space-y-6 text-base sm:text-lg font-light leading-relaxed text-white/90">
+          <div className="space-y-5 sm:space-y-6 text-sm sm:text-base md:text-lg font-light leading-relaxed text-white/90">
             <p>
               Poppy Productions is an award-winning independent film, television, and
               commercial production house dedicated to auteur-driven visual
@@ -67,10 +67,10 @@ export default function AboutPage() {
       <TeamSection />
 
       {/* 4. DIVISIONS matching Bunya (Poppy Productions, Poppy Entertainment, Dark Matter) */}
-      <section id="divisions" className="relative bg-[#f8f8f8] py-24 md:py-36 text-neutral-900">
-        <div className="mx-auto max-w-6xl px-6 md:px-12 space-y-16">
+      <section id="divisions" className="relative bg-[#f8f8f8] py-16 sm:py-24 md:py-36 text-neutral-900">
+        <div className="mx-auto max-w-6xl px-4 sm:px-8 md:px-12 space-y-12 sm:space-y-16">
           <div className="text-center sm:text-left border-b border-neutral-300 pb-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.2em] text-neutral-900">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.18em] sm:tracking-[0.2em] text-neutral-900">
               DIVISIONS
             </h2>
           </div>

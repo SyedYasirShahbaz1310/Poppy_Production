@@ -96,25 +96,25 @@ export default function ShowreelModal({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-2xl transition-all duration-500 animate-fadeIn">
       {/* Top bar with title and close button */}
-      <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-6 md:px-12 bg-gradient-to-b from-black/80 to-transparent">
-        <div className="flex items-center space-x-3">
-          <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#cc0000] animate-ping" />
-          <span className="text-xs uppercase tracking-[0.25em] text-white/70 font-semibold">
+      <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-4 py-4 md:px-12 bg-gradient-to-b from-black/80 to-transparent">
+        <div className="flex items-center space-x-2.5 sm:space-x-3">
+          <span className="inline-block w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#cc0000] animate-ping" />
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-white/70 font-semibold truncate max-w-[200px] sm:max-w-none">
             {title}
           </span>
         </div>
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="group flex items-center space-x-2 rounded-full border border-white/20 bg-black/50 px-4 py-2 text-xs uppercase tracking-widest text-white transition-all hover:border-[#cc0000] hover:bg-[#cc0000] hover:text-white"
+          className="group flex items-center space-x-1.5 sm:space-x-2 rounded-full border border-white/20 bg-black/50 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs uppercase tracking-widest text-white transition-all hover:border-[#cc0000] hover:bg-[#cc0000] hover:text-white"
         >
           <span>CLOSE</span>
-          <X className="w-4 h-4 transition-transform group-hover:rotate-90" />
+          <X className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:rotate-90" />
         </button>
       </div>
 
       {/* Main Video Container */}
-      <div className="relative w-full max-w-7xl max-h-[85vh] aspect-video px-4 md:px-8 flex items-center justify-center">
+      <div className="relative w-full max-w-7xl max-h-[85vh] aspect-video px-2 sm:px-4 md:px-8 flex items-center justify-center">
         <video
           ref={videoRef}
           src={videoSrc}
@@ -125,7 +125,7 @@ export default function ShowreelModal({
         />
 
         {/* Floating Custom Controls */}
-        <div className="absolute bottom-6 left-8 right-8 z-10 flex flex-col gap-2 rounded-xl bg-black/60 backdrop-blur-md p-3 border border-white/10 opacity-90 transition-opacity hover:opacity-100">
+        <div className="absolute bottom-4 left-3 right-3 sm:bottom-6 sm:left-8 sm:right-8 z-10 flex flex-col gap-2 rounded-xl bg-black/70 backdrop-blur-md p-2.5 sm:p-3 border border-white/10 opacity-95 transition-opacity hover:opacity-100">
           {/* Progress bar */}
           <div
             onClick={handleSeek}

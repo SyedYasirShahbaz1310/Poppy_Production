@@ -62,26 +62,26 @@ export default function TeamSection() {
     <section
       ref={sectionRef}
       id="team"
-      className="relative bg-white py-20 md:py-32 text-neutral-900 select-none border-b border-neutral-200"
+      className="relative bg-white py-16 sm:py-20 md:py-32 text-neutral-900 select-none border-b border-neutral-200"
     >
-      <div className="mx-auto max-w-7xl px-6 md:px-12 space-y-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8 md:px-12 space-y-12 sm:space-y-16">
         {/* Section Heading matching Screenshot 2 */}
         <div className="text-center">
           <h2
             ref={headingRef}
-            className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.25em] text-neutral-900"
+            className="text-2xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.2em] sm:tracking-[0.25em] text-neutral-900"
           >
             TEAM
           </h2>
           {/* Thin horizontal line divider matching Screenshot 2 */}
           <div
             ref={lineRef}
-            className="mx-auto h-[1px] w-24 bg-neutral-900 my-6 origin-center"
+            className="mx-auto h-[1px] w-20 sm:w-24 bg-neutral-900 my-4 sm:my-6 origin-center"
           />
         </div>
 
         {/* 3-Column Team Members Grid matching Screenshots 2 & 3 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14">
           {TEAM_DATA.map((member, index) => (
             <div
               key={member.id}

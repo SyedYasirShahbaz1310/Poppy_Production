@@ -8,7 +8,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenShowreel }: HeroProps) {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black select-none">
+    <section className="relative h-[100dvh] min-h-[500px] w-full overflow-hidden bg-black select-none">
       {/* Background Fullscreen Video (Optimized 1080p Faststart Loop - Zero Lag) */}
       <div className="absolute inset-0 z-0">
         <video
@@ -25,7 +25,7 @@ export default function Hero({ onOpenShowreel }: HeroProps) {
       </div>
 
       {/* Left-Aligned Watch Showreel Element (Matching Screenshot 1) */}
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-6 md:px-12 pointer-events-none">
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-5 sm:px-8 md:px-12 pointer-events-none">
         <div className="pointer-events-auto flex flex-col items-start space-y-4">
           {/* Circular Play Button */}
           <button

@@ -167,9 +167,9 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="relative bg-[#cc0000] text-white pt-24 pb-12 select-none overflow-hidden"
+      className="relative bg-[#cc0000] text-white pt-16 sm:pt-24 pb-12 select-none overflow-hidden"
     >
-      <div className="mx-auto max-w-7xl px-6 md:px-12 space-y-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8 md:px-12 space-y-12 sm:space-y-16">
         {/* Cultural Acknowledgement Section matching Screenshot 2 */}
         <div className="max-w-4xl space-y-3.5 text-left">
           <p
@@ -209,7 +209,7 @@ export default function Footer() {
         />
 
         {/* 3 Entity Logos Column matching Screenshot 2 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 md:gap-16 items-start md:items-center">
           {/* Logo 1: POPPY PRODUCTIONS */}
           <div
             ref={(el) => {
@@ -218,11 +218,11 @@ export default function Footer() {
             className="flex flex-col items-start justify-center group cursor-pointer"
           >
             <Link href="/" className="inline-block transform-gpu transition-all duration-300 hover:scale-105">
-              <div className="flex flex-col text-white tracking-[0.3em] font-light leading-none">
-                <span className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.35em] transition-all duration-300 group-hover:tracking-[0.42em] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+              <div className="flex flex-col text-white tracking-[0.25em] sm:tracking-[0.3em] font-light leading-none">
+                <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-[0.28em] sm:tracking-[0.35em] transition-all duration-300 group-hover:tracking-[0.42em] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
                   POPPY
                 </span>
-                <span className="text-xs sm:text-sm tracking-[0.42em] mt-1.5 opacity-90 transition-opacity group-hover:opacity-100">
+                <span className="text-[10px] sm:text-xs md:text-sm tracking-[0.35em] sm:tracking-[0.42em] mt-1.5 opacity-90 transition-opacity group-hover:opacity-100">
                   PRODUCTIONS
                 </span>
               </div>
@@ -240,11 +240,11 @@ export default function Footer() {
               href="/about#divisions"
               className="inline-block transform-gpu transition-all duration-300 hover:scale-105"
             >
-              <div className="flex flex-col text-white tracking-[0.3em] font-light leading-none">
-                <span className="text-3xl sm:text-4xl md:text-5xl font-light tracking-[0.35em] transition-all duration-300 group-hover:tracking-[0.42em] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+              <div className="flex flex-col text-white tracking-[0.25em] sm:tracking-[0.3em] font-light leading-none">
+                <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-[0.28em] sm:tracking-[0.35em] transition-all duration-300 group-hover:tracking-[0.42em] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
                   DARK
                 </span>
-                <span className="text-xs sm:text-sm tracking-[0.42em] mt-1.5 opacity-90 transition-opacity group-hover:opacity-100">
+                <span className="text-[10px] sm:text-xs md:text-sm tracking-[0.35em] sm:tracking-[0.42em] mt-1.5 opacity-90 transition-opacity group-hover:opacity-100">
                   MATTER
                 </span>
               </div>
@@ -262,11 +262,11 @@ export default function Footer() {
               href="/about#divisions"
               className="inline-block transform-gpu transition-all duration-300 hover:scale-105"
             >
-              <div className="flex flex-col text-white tracking-[0.3em] font-light leading-none">
-                <span className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.35em] transition-all duration-300 group-hover:tracking-[0.42em] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+              <div className="flex flex-col text-white tracking-[0.25em] sm:tracking-[0.3em] font-light leading-none">
+                <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-[0.28em] sm:tracking-[0.35em] transition-all duration-300 group-hover:tracking-[0.42em] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
                   POPPY
                 </span>
-                <span className="text-xs sm:text-sm tracking-[0.42em] mt-1.5 opacity-90 transition-opacity group-hover:opacity-100">
+                <span className="text-[10px] sm:text-xs md:text-sm tracking-[0.35em] sm:tracking-[0.42em] mt-1.5 opacity-90 transition-opacity group-hover:opacity-100">
                   ENTERTAINMENT
                 </span>
               </div>

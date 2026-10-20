@@ -86,14 +86,14 @@ export default function CurtainMenu({
           animate={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[120] flex flex-col justify-between overflow-hidden bg-[#0A0A0A] text-white"
+          className="fixed inset-0 z-[120] flex flex-col justify-between overflow-y-auto bg-[#0A0A0A] text-white min-h-[100dvh]"
         >
           {/* Full-size Professional Cinematic Background Picture directly extracted from Poppy video footage */}
           <motion.div
             initial={{ scale: 1.08 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="absolute inset-0 z-0 select-none overflow-hidden"
+            className="fixed inset-0 z-0 select-none overflow-hidden"
             style={{
               backgroundImage: `url("${MENU_BLUR_PREVIEW}")`,
               backgroundSize: "cover",
@@ -119,25 +119,25 @@ export default function CurtainMenu({
           </motion.div>
 
           {/* Top Header inside Menu */}
-          <div className="relative z-10 flex w-full items-center justify-between px-6 sm:px-8 md:px-10 py-3 sm:py-3.5">
+          <div className="relative z-10 flex w-full items-center justify-between px-4 sm:px-8 md:px-10 py-3 sm:py-3.5 shrink-0">
             {/* Left: Brand Logo */}
             <Link
               href="/"
               onClick={(e) => handleNavClick(e, "/")}
               className="group flex items-center"
             >
-              <div className="flex flex-col text-white tracking-[0.25em] select-none">
-                <span className="text-xl sm:text-2xl md:text-[26px] font-bold tracking-[0.28em] leading-none">
+              <div className="flex flex-col text-white tracking-[0.22em] sm:tracking-[0.25em] select-none">
+                <span className="text-lg sm:text-2xl md:text-[26px] font-bold tracking-[0.24em] sm:tracking-[0.28em] leading-none">
                   POPPY
                 </span>
-                <span className="text-[9px] sm:text-[10px] tracking-[0.34em] font-light opacity-90 leading-none mt-1 sm:mt-1.5">
+                <span className="text-[8px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.34em] font-light opacity-90 leading-none mt-1 sm:mt-1.5">
                   PRODUCTIONS
                 </span>
               </div>
             </Link>
 
             {/* Right: Search & MENU ✕ Button */}
-            <div className="flex items-center space-x-6 sm:space-x-8">
+            <div className="flex items-center space-x-4 sm:space-x-8">
               {onOpenSearch && (
                 <button
                   onClick={() => {
@@ -145,7 +145,7 @@ export default function CurtainMenu({
                     onOpenSearch();
                   }}
                   aria-label="Search"
-                  className="text-white hover:text-[#F2613F] transition-colors focus:outline-none cursor-pointer"
+                  className="text-white hover:text-[#F2613F] transition-colors focus:outline-none cursor-pointer p-1"
                 >
                   <Search className="w-5 h-5 stroke-[1.8]" />
                 </button>
@@ -155,7 +155,7 @@ export default function CurtainMenu({
               <button
                 onClick={onClose}
                 aria-label="Close Navigation Menu"
-                className="group flex items-center space-x-2 text-white hover:text-[#F2613F] transition-colors focus:outline-none cursor-pointer py-1"
+                className="group flex items-center space-x-2 text-white hover:text-[#F2613F] transition-colors focus:outline-none cursor-pointer py-1 px-1"
               >
                 <span className="text-xs font-bold tracking-[0.22em] uppercase">
                   MENU
@@ -166,8 +166,8 @@ export default function CurtainMenu({
           </div>
 
           {/* Center Navigation Links with Staggered Motion */}
-          <div className="relative z-10 my-auto px-6 sm:px-12 md:px-16 py-6 max-w-4xl">
-            <ul className="space-y-4 sm:space-y-5 md:space-y-6">
+          <div className="relative z-10 my-auto px-5 sm:px-12 md:px-16 py-6 sm:py-8 max-w-4xl">
+            <ul className="space-y-3 sm:space-y-5 md:space-y-6">
               {navItems.map((item, index) => (
                 <motion.li
                   key={item.label}
@@ -183,7 +183,7 @@ export default function CurtainMenu({
                   <Link
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className="group inline-block text-4xl sm:text-6xl md:text-7xl font-extralight uppercase tracking-[0.14em] text-white hover:translate-x-3 transition-all duration-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
+                    className="group inline-block text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight uppercase tracking-[0.12em] sm:tracking-[0.14em] text-white hover:translate-x-3 transition-all duration-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
                   >
                     <span className="transition-colors group-hover:text-[#F2613F]">
                       {item.label}
@@ -200,16 +200,16 @@ export default function CurtainMenu({
                     delay: 0.2 + navItems.length * 0.08,
                     duration: 0.5,
                   }}
-                  className="pt-4"
+                  className="pt-2 sm:pt-4"
                 >
                   <button
                     onClick={() => {
                       onClose();
                       onOpenShowreel();
                     }}
-                    className="group flex items-center space-x-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-[#F2613F] hover:text-white transition-colors cursor-pointer"
+                    className="group flex items-center space-x-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.22em] sm:tracking-[0.25em] text-[#F2613F] hover:text-white transition-colors cursor-pointer"
                   >
-                    <span className="w-6 h-[1.5px] bg-[#F2613F] group-hover:w-10 transition-all duration-300" />
+                    <span className="w-5 sm:w-6 h-[1.5px] bg-[#F2613F] group-hover:w-10 transition-all duration-300" />
                     <Play className="w-3.5 h-3.5 fill-current" />
                     <span>WATCH SHOWREEL</span>
                   </button>
@@ -219,8 +219,8 @@ export default function CurtainMenu({
           </div>
 
           {/* Bottom Footer inside Menu */}
-          <div className="relative z-10 flex items-center justify-between px-6 sm:px-8 md:px-10 py-5 sm:py-6 text-xs text-white/80 border-t border-white/10">
-            <div className="tracking-widest uppercase font-mono text-[11px] text-white/70">
+          <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 px-5 sm:px-8 md:px-10 py-4 sm:py-6 text-xs text-white/80 border-t border-white/10 shrink-0">
+            <div className="tracking-widest uppercase font-mono text-[10px] sm:text-[11px] text-white/70">
               {BRAND_CONFIG.contact.email}
             </div>
 

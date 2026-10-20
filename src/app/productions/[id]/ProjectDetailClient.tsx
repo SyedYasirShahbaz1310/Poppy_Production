@@ -135,16 +135,16 @@ export default function ProjectDetailClient({
         </div>
 
         {/* Centered Title & Category matching Screenshot 2 */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-3 pt-16">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-2 sm:space-y-3 pt-16">
           <h1
             ref={titleRef}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold uppercase tracking-[0.2em] text-white drop-shadow-2xl"
+            className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-[0.12em] sm:tracking-[0.2em] text-white drop-shadow-2xl"
           >
             {project.title}
           </h1>
           <p
             ref={categoryRef}
-            className="text-xs sm:text-sm md:text-base tracking-[0.35em] font-light uppercase text-white/90 mt-3"
+            className="text-[11px] sm:text-sm md:text-base tracking-[0.25em] sm:tracking-[0.35em] font-light uppercase text-white/90 mt-2 sm:mt-3"
           >
             {project.category}
           </p>
@@ -154,7 +154,7 @@ export default function ProjectDetailClient({
         <button
           onClick={handleShare}
           aria-label="Share Project"
-          className="fixed bottom-8 right-8 z-40 flex items-center justify-center h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-[#cc0000] text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-[#e00000] focus:outline-none"
+          className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-40 flex items-center justify-center h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-[#cc0000] text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-[#e00000] focus:outline-none"
         >
           {copied ? (
             <Check className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -164,7 +164,7 @@ export default function ProjectDetailClient({
         </button>
 
         {copied && (
-          <div className="fixed bottom-24 right-8 z-40 bg-black/90 text-white text-xs px-4 py-2 rounded-full border border-white/20 shadow-xl">
+          <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-8 z-40 bg-black/90 text-white text-xs px-4 py-2 rounded-full border border-white/20 shadow-xl">
             Link copied to clipboard!
           </div>
         )}
