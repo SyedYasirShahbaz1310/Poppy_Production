@@ -96,7 +96,8 @@ export default function TeamSection() {
                 <img
                   src={member.thumbSrc}
                   alt={member.name}
-                  className="h-full w-full object-cover object-top filter grayscale contrast-110 transition-transform duration-700 group-hover:scale-105"
+                  decoding="async"
+                  className="h-full w-full object-cover object-[center_15%] filter grayscale contrast-110 transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
