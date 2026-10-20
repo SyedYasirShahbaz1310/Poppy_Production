@@ -40,7 +40,7 @@ export default function CurtainMenu({
     { label: "About", href: "/about" },
     { label: "Team", href: "/team" },
     { label: "Productions", href: "/productions" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {

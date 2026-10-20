@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles } from "lucide-react";
+import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { BRAND_CONFIG } from "@/lib/data";
 
 export default function ContactSection() {
@@ -65,7 +65,7 @@ export default function ContactSection() {
     <section id="contact" className="relative py-24 md:py-32 bg-[#0A0A0A] text-white">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Direct Inquiries Info */}
+          {/* Left Column: Direct Inquiries Info & Studio Card */}
           <div className="lg:col-span-5 space-y-8">
             <div className="inline-flex items-center space-x-2 rounded-full border border-[#cc0000]/40 bg-[#cc0000]/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#cc0000]">
               <Sparkles className="w-3.5 h-3.5" />
@@ -82,36 +82,69 @@ export default function ContactSection() {
               narratives, our team delivers world-class cinematic excellence.
             </p>
 
-            <div className="space-y-4 pt-4 border-t border-white/10 text-sm">
-              <div>
-                <span className="text-xs uppercase tracking-widest text-white/40 block">
-                  Production Inquiries
+            {/* Lahore Studio Card matching Screenshot 2 */}
+            <div className="rounded-2xl border border-white/10 bg-[#121212] p-6 sm:p-7 shadow-2xl space-y-5">
+              {/* Studio Header: Location Pin & Green Live Dot */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2.5">
+                  <MapPin className="w-5 h-5 text-[#F2613F]" />
+                  <span className="text-base sm:text-lg font-semibold text-white tracking-wide">
+                    {BRAND_CONFIG.contact.studio || "Poppy Productions Studio"}
+                  </span>
+                </div>
+                {/* Active Live Status Dot */}
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                 </span>
+              </div>
+
+              {/* Address: DHA Phase 1 Fort Villas , 54810 */}
+              <div className="text-sm sm:text-base font-normal text-white/90 pl-1 leading-snug">
+                {BRAND_CONFIG.contact.address}
+                <div className="text-xs text-white/50 tracking-wider uppercase mt-1">
+                  Lahore, Pakistan
+                </div>
+              </div>
+
+              {/* Phone & Direct WhatsApp Button */}
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-1 border-t border-white/5">
+                <div className="flex items-center space-x-2.5">
+                  <Phone className="w-4 h-4 text-[#F2613F]" />
+                  <a
+                    href={`tel:${BRAND_CONFIG.contact.phone}`}
+                    className="text-sm sm:text-base font-medium text-white hover:text-[#F2613F] transition-colors"
+                  >
+                    {BRAND_CONFIG.contact.phone}
+                  </a>
+                </div>
+
+                {/* Direct WhatsApp Pill Button */}
                 <a
-                  href={`mailto:${BRAND_CONFIG.contact.inquiries}`}
-                  className="text-white font-medium hover:text-poppy transition-colors"
+                  href={`https://wa.me/${BRAND_CONFIG.contact.whatsapp}?text=Hello%20Poppy%20Productions,%20I%20would%20like%20to%20discuss%20a%20project.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 hover:bg-emerald-500 hover:text-black px-4 py-1.5 text-xs font-semibold text-emerald-400 transition-all duration-300 shadow-md group"
                 >
-                  {BRAND_CONFIG.contact.inquiries}
+                  <span>WhatsApp</span>
                 </a>
               </div>
 
-              <div>
-                <span className="text-xs uppercase tracking-widest text-white/40 block">
-                  Studio Phone
-                </span>
+              {/* Email */}
+              <div className="flex items-center space-x-2.5 pt-1">
+                <Mail className="w-4 h-4 text-[#F2613F]" />
                 <a
-                  href={`tel:${BRAND_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
-                  className="text-white font-medium hover:text-poppy transition-colors"
+                  href={`mailto:${BRAND_CONFIG.contact.email}`}
+                  className="text-sm sm:text-base font-medium text-white hover:text-[#F2613F] transition-colors"
                 >
-                  {BRAND_CONFIG.contact.phone}
+                  {BRAND_CONFIG.contact.email}
                 </a>
               </div>
 
-              <div>
-                <span className="text-xs uppercase tracking-widest text-white/40 block">
-                  Studio Location
-                </span>
-                <span className="text-white/80">{BRAND_CONFIG.contact.address}</span>
+              {/* Production Hours: Open 24 Hours (24/7) */}
+              <div className="flex items-center space-x-2.5 pt-1 text-xs sm:text-sm text-white/70 border-t border-white/5">
+                <Clock className="w-4 h-4 text-white/50 shrink-0" />
+                <span>{BRAND_CONFIG.contact.hours}</span>
               </div>
             </div>
           </div>
@@ -209,7 +242,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="group relative inline-flex items-center space-x-3 rounded-full bg-[#cc0000] px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#b30000] hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] disabled:opacity-50"
+                  className="group relative inline-flex items-center space-x-3 rounded-full bg-[#cc0000] px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-[#b30000] hover:shadow-[0_0_30px_rgba(204,0,0,0.6)] disabled:opacity-50 cursor-pointer"
                 >
                   {status === "loading" ? (
                     <>

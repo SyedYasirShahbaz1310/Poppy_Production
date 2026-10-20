@@ -14,10 +14,16 @@ export const BRAND_CONFIG = {
     vimeo: "https://vimeo.com/poppyproductions",
   },
   contact: {
-    email: "hello@poppyproductions.com",
-    inquiries: "bookings@poppyproductions.com",
-    address: "Studio 4B, Cinematic Arts Precinct, Melbourne VIC 3000",
-    phone: "+61 (03) 9419 8820",
+    studio: "Poppy Productions Studio",
+    email: "info@poppyproductions.pk",
+    inquiries: "info@poppyproductions.pk",
+    address: "DHA Phase 1 Fort Villas , 54810",
+    city: "Lahore",
+    country: "Pakistan",
+    fullAddress: "DHA Phase 1 Fort Villas, Lahore, 54810, Pakistan",
+    phone: "03000288060",
+    whatsapp: "923000288060",
+    hours: "Open 24 Hours (24/7) — Round-the-Clock Production",
   },
 };
 
