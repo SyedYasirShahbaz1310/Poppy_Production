@@ -305,7 +305,7 @@ export const TEAM_DATA: TeamMember[] = [
       "Expertise across anamorphic direction, visual pacing, and high-contrast aesthetics",
     ],
     imageSrc: "/assets/team/team-1.jpg",
-    thumbSrc: "/assets/team/team-1.jpg",
+    thumbSrc: "/assets/team/team-1-thumb.jpg",
     awards: "Festival Laurels & Best Cinematography Honoree",
   },
   {
@@ -325,7 +325,7 @@ export const TEAM_DATA: TeamMember[] = [
       "Specializes in talent packaging and high-end production logistics",
     ],
     imageSrc: "/assets/team/team-2.jpg",
-    thumbSrc: "/assets/team/team-2.jpg",
+    thumbSrc: "/assets/team/team-2-thumb.jpg",
     awards: "Producer of the Year Nominee 2024",
   },
   {
@@ -345,7 +345,7 @@ export const TEAM_DATA: TeamMember[] = [
       "Passionate mentor for rising camera operators and lighting technicians",
     ],
     imageSrc: "/assets/team/team-3.jpg",
-    thumbSrc: "/assets/team/team-3.jpg",
+    thumbSrc: "/assets/team/team-3-thumb.jpg",
     awards: "ACS Golden Tripod Recognition",
   },
   {
@@ -365,7 +365,7 @@ export const TEAM_DATA: TeamMember[] = [
       "Over 8 years experience cutting narrative drama and commercial spots",
     ],
     imageSrc: "/assets/team/team-4.jpg",
-    thumbSrc: "/assets/team/team-4.jpg",
+    thumbSrc: "/assets/team/team-4-thumb.jpg",
     awards: "Best Editing Recognition 2024",
   },
   {

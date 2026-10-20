@@ -1,34 +1,93 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TeamMember } from "@/types";
 import { TEAM_DATA } from "@/lib/data";
 import TeamMemberModal from "@/components/TeamMemberModal";
 
 export default function TeamSection() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      if (headingRef.current) {
+        tl.fromTo(
+          headingRef.current,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+        );
+      }
+      if (lineRef.current) {
+        tl.fromTo(
+          lineRef.current,
+          { scaleX: 0, opacity: 0 },
+          { scaleX: 1, opacity: 1, duration: 0.7, ease: "power2.out" },
+          "-=0.5"
+        );
+      }
+      const validCards = cardsRef.current.filter(Boolean);
+      if (validCards.length > 0) {
+        tl.fromTo(
+          validCards,
+          { y: 45, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: "power3.out" },
+          "-=0.4"
+        );
+      }
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="team"
       className="relative bg-white py-20 md:py-32 text-neutral-900 select-none border-b border-neutral-200"
     >
       <div className="mx-auto max-w-7xl px-6 md:px-12 space-y-16">
         {/* Section Heading matching Screenshot 2 */}
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.25em] text-neutral-900">
+          <h2
+            ref={headingRef}
+            className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.25em] text-neutral-900"
+          >
             TEAM
           </h2>
           {/* Thin horizontal line divider matching Screenshot 2 */}
-          <div className="mx-auto h-[1px] w-24 bg-neutral-900 my-6" />
+          <div
+            ref={lineRef}
+            className="mx-auto h-[1px] w-24 bg-neutral-900 my-6 origin-center"
+          />
         </div>
 
         {/* 3-Column Team Members Grid matching Screenshots 2 & 3 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
-          {TEAM_DATA.map((member) => (
+          {TEAM_DATA.map((member, index) => (
             <div
               key={member.id}
+              ref={(el) => {
+                cardsRef.current[index] = el;
+              }}
               onClick={() => setSelectedMember(member)}
               className="group cursor-pointer flex flex-col space-y-4"
             >

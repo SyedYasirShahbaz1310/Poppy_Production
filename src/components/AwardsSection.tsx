@@ -19,12 +19,12 @@ export default function AwardsSection() {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // 1. Entrance timeline with ScrollTrigger
+      // 1. Entrance timeline with ScrollTrigger - re-runs smoothly whenever scrolled into view
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: "top 78%",
-          toggleActions: "play none none none",
+          start: "top 80%",
+          toggleActions: "play reverse play reverse",
         },
       });
 

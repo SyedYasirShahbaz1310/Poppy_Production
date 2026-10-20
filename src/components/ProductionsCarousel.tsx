@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Project } from "@/types";
 import { PROJECTS_DATA } from "@/lib/data";
 
@@ -22,6 +24,43 @@ export default function ProductionsCarousel({
 
   const trackRef = useRef<HTMLDivElement>(null);
   const animFrameId = useRef<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const dividerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      if (headingRef.current) {
+        tl.fromTo(
+          headingRef.current,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+        );
+      }
+      if (dividerRef.current) {
+        tl.fromTo(
+          dividerRef.current,
+          { scaleX: 0, opacity: 0 },
+          { scaleX: 1, opacity: 1, duration: 0.7, ease: "power2.out" },
+          "-=0.5"
+        );
+      }
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
 
   // We duplicate projects to create an infinite, seamless wrapping carousel
   const carouselProjects = [...PROJECTS_DATA, ...PROJECTS_DATA];
@@ -101,16 +140,23 @@ export default function ProductionsCarousel({
 
   return (
     <section
+      ref={sectionRef}
       id="productions"
       className="relative bg-[#cc0000] py-20 md:py-28 text-white overflow-hidden select-none"
     >
       {/* Section Header matching Screenshot 4 */}
       <div className="mx-auto max-w-7xl px-6 md:px-12 text-center mb-8 sm:mb-12">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.25em] text-white">
+        <h2
+          ref={headingRef}
+          className="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.25em] text-white"
+        >
           PRODUCTIONS
         </h2>
         {/* Thin horizontal line divider matching Screenshot 4 */}
-        <div className="mx-auto h-[1px] w-24 bg-white/40 my-6" />
+        <div
+          ref={dividerRef}
+          className="mx-auto h-[1px] w-24 bg-white/40 my-6 origin-center"
+        />
       </div>
 
       {/* Carousel Container with Left/Right Buttons */}
