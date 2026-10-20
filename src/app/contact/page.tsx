@@ -27,7 +27,7 @@ export default function ContactPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 md:px-12 space-y-3 sm:space-y-4 pt-16">
           <Link
             href="/"
-            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.22em] sm:tracking-[0.25em] text-white/70 hover:text-[#F2613F] transition-colors mb-2"
+            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.22em] sm:tracking-[0.25em] text-white/70 hover:text-[#FF5E3A] transition-colors mb-2"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Return to Home</span>

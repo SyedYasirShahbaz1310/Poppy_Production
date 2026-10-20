@@ -64,7 +64,7 @@ export default function ProductionsClient({ projects }: ProductionsClientProps) 
       {/* 1. HERO SECTION matching Bunya Screenshot 1                    */}
       {/* Full-width cinematic image from data with bold "PRODUCTIONS"   */}
       {/* ============================================================== */}
-      <section className="relative w-full h-[75vh] sm:h-[85vh] md:h-[92vh] overflow-hidden bg-black select-none">
+      <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-black select-none">
         {/* Background Hero Image */}
         <motion.div
           initial={{ scale: 1.08 }}
@@ -99,6 +99,12 @@ export default function ProductionsClient({ projects }: ProductionsClientProps) 
               FEATURE FILMS • TELEVISION DRAMA • HIGH-END COMMERCIALS
             </p>
           </motion.div>
+        </div>
+
+        {/* Subtle Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center space-y-2 text-white/60 pointer-events-none">
+          <span className="text-[10px] uppercase tracking-[0.3em] font-light">Scroll</span>
+          <div className="w-[1px] h-8 bg-gradient-to-b from-white/60 to-transparent animate-pulse" />
         </div>
       </section>
 

@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <div className="relative bg-white text-black min-h-screen">
       {/* 1. Page Hero with Full-Size Professional Cinematic Background Picture matching Screenshot 5 */}
-      <section className="relative h-[65vh] sm:h-[75vh] md:h-[82vh] min-h-[480px] w-full flex items-center justify-center text-center overflow-hidden bg-black">
+      <section className="relative h-screen min-h-[600px] w-full flex items-center justify-center text-center overflow-hidden bg-black select-none">
         {/* Full-bleed background cinematic picture */}
         <div className="absolute inset-0 z-0 select-none">
           <Image
@@ -32,6 +32,12 @@ export default function AboutPage() {
           <p className="text-[11px] sm:text-sm font-light uppercase tracking-[0.25em] sm:tracking-[0.35em] text-white/85 max-w-2xl mx-auto">
             THE CREATIVE COLLECTIVE &amp; STORYTELLERS BEHIND POPPY PRODUCTIONS
           </p>
+        </div>
+
+        {/* Subtle Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center space-y-2 text-white/60 pointer-events-none">
+          <span className="text-[10px] uppercase tracking-[0.3em] font-light">Scroll</span>
+          <div className="w-[1px] h-8 bg-gradient-to-b from-white/60 to-transparent animate-pulse" />
         </div>
       </section>
 
