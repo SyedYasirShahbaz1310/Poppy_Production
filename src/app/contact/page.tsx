@@ -13,7 +13,7 @@ export default function ContactPage() {
       <section className="relative h-[55vh] sm:h-[65vh] min-h-[420px] w-full flex items-center justify-center text-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0 select-none">
           <Image
-            src="/assets/images/menu_bg_extracted_aerial.jpg"
+            src="/assets/images/menu_bg_extracted_aerial.webp"
             alt="Poppy Productions Lahore Studio"
             fill
             priority

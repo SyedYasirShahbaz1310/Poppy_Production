@@ -3,6 +3,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import { ModalProvider } from "@/context/ModalContext";
 import NavigationShell from "@/components/NavigationShell";
+import CurtainMenuPreload from "@/components/CurtainMenuPreload";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://poppyproductions.com"),
@@ -49,9 +50,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark scroll-smooth">
+      <head>
+        <link
+          rel="preload"
+          href="/assets/images/menu_bg_extracted_aerial.webp"
+          as="image"
+          type="image/webp"
+          fetchPriority="high"
+        />
+      </head>
       <body className="bg-[#0A0A0A] text-white antialiased selection:bg-poppy selection:text-white">
         <SmoothScroll>
           <ModalProvider>
+            <CurtainMenuPreload />
             <NavigationShell>{children}</NavigationShell>
           </ModalProvider>
         </SmoothScroll>

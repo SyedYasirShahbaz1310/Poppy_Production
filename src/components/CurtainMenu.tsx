@@ -14,6 +14,9 @@ interface CurtainMenuProps {
   onOpenShowreel?: () => void;
 }
 
+const MENU_BLUR_PREVIEW =
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAQTGF2YzYyLjI4LjEwMgD/2wBDABIMDRANCxIQDhAUExIVGywdGxgYGzYnKSAsQDlEQz85Pj1HUGZXR0thTT0+WXlaYWltcnNyRVV9hnxvhWZwcm7/2wBDARMUFBsXGzQdHTRuST5Jbm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm7/wAARCAAWACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwBEsDLAqu+FHNLC0UKmMsMrU7vtTg8HpWDKx+143dTzU7hHsbcNs04MqsAO1VJ7Qh8ls+tWbJsHaSQMUrEls8Fc1JoUHidMrGuc8UVPOpXc4YqB6d6KpENi3blI1ArFjJn1AE8c0UU+hEfiZsKxEpUdBUrL5cBIOQTRRUGrGuNsQB5B55ooopkM/9k=";
+
 export default function CurtainMenu({
   isOpen,
   onClose,
@@ -91,12 +94,26 @@ export default function CurtainMenu({
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="absolute inset-0 z-0 select-none overflow-hidden"
+            style={{
+              backgroundImage: `url("${MENU_BLUR_PREVIEW}")`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
-            <img
-              src="/assets/images/menu_bg_extracted_aerial.jpg"
-              alt="Poppy Productions Cinematic Scene"
-              className="w-full h-full object-cover object-center pointer-events-none brightness-90 contrast-105"
-            />
+            <picture className="w-full h-full block">
+              <source
+                srcSet="/assets/images/menu_bg_extracted_aerial.webp"
+                type="image/webp"
+              />
+              <img
+                src="/assets/images/menu_bg_extracted_aerial.jpg"
+                alt="Poppy Productions Cinematic Scene"
+                loading="eager"
+                decoding="sync"
+                fetchPriority="high"
+                className="w-full h-full object-cover object-center pointer-events-none brightness-90 contrast-105"
+              />
+            </picture>
             {/* Elegant cinematic contrast overlay - balanced so the aerial video frame is clearly visible and vibrant while text remains crisp */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/75 pointer-events-none" />
           </motion.div>

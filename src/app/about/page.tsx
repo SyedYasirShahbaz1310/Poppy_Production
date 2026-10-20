@@ -12,7 +12,7 @@ export default function AboutPage() {
         {/* Full-bleed background cinematic picture */}
         <div className="absolute inset-0 z-0 select-none">
           <Image
-            src="/assets/images/menu_bg_extracted_aerial.jpg"
+            src="/assets/images/menu_bg_extracted_aerial.webp"
             alt="Poppy Productions About Cinematic"
             fill
             priority

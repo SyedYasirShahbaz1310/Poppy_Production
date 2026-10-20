@@ -59,6 +59,18 @@ export default function Header({
           {/* MENU Button with rich hover animation matching Screenshot 1 */}
           <button
             onClick={onOpenMenu}
+            onMouseEnter={() => {
+              if (typeof window !== "undefined") {
+                const img = new window.Image();
+                img.src = "/assets/images/menu_bg_extracted_aerial.webp";
+              }
+            }}
+            onTouchStart={() => {
+              if (typeof window !== "undefined") {
+                const img = new window.Image();
+                img.src = "/assets/images/menu_bg_extracted_aerial.webp";
+              }
+            }}
             aria-label="Open Navigation Menu"
             className="group flex items-center space-x-2.5 text-white transition-all duration-300 focus:outline-none cursor-pointer py-1 px-1.5"
           >
